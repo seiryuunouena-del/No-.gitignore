@@ -1,0 +1,63 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "清流農園リッチメニュー",
+  "chatBarText": "メニューを開く",
+  "areas": [
+    {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1250,
+        "height": 843
+      },
+      "action": {
+        "type": "uri",
+        "label": "TikTok Shop",
+        "uri": "https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1250,
+        "y": 0,
+        "width": 1250,
+        "height": 843
+      },
+      "action": {
+        "type": "uri",
+        "label": "BASEショップ",
+        "uri": "https://seiryunouen.base.shop/"
+      }
+    },
+    {
+      "bounds": {
+        "x": 0,
+        "y": 843,
+        "width": 1250,
+        "height": 843
+      },
+      "action": {
+        "type": "message",
+        "label": "直売所情報",
+        "text": "🏪 直売所情報\n\n株式会社清流農園\n\n【営業時間】\n11時〜17時\n\n【住所】\n北海道網走郡津別町最上291番地\n\n【Googleマップ】\nhttps://maps.app.goo.gl/miCsWeoq8X68nEB1A\n\n【販売商品】\n・玉ねぎ\n・季節野菜\n・加工品（予定）"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1250,
+        "y": 843,
+        "width": 1250,
+        "height": 843
+      },
+      "action": {
+        "type": "message",
+        "label": "SNS一覧",
+        "text": "📱 SNS一覧\n\n【TikTok】\nhttps://www.tiktok.com/@kitanokoropo?_r=1&_t=ZS-979JmEijSle"
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2500 1686" width="2500" height="1686">
+  <defs>
+    <!-- TikTok グラデーション -->
+    <linearGradient id="grad-tiktok" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A1A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2C2C2C;stop-opacity:1" />
+    </linearGradient>
+    <!-- BASE グラデーション -->
+    <linearGradient id="grad-base" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8762A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5A05A;stop-opacity:1" />
+    </linearGradient>
+    <!-- 直売所 グラデーション -->
+    <linearGradient id="grad-shop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A7C3F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6AA85E;stop-opacity:1" />
+    </linearGradient>
+    <!-- SNS グラデーション -->
+    <linearGradient id="grad-sns" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5B6EAE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B8FCE;stop-opacity:1" />
+    </linearGradient>
+    <!-- ドロップシャドウ -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.2)"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="2500" height="1686" fill="#FFFFFF"/>
+
+  <!-- セパレーター -->
+  <line x1="1250" y1="0" x2="1250" y2="1686" stroke="#FFFFFF" stroke-width="6"/>
+  <line x1="0" y1="843" x2="2500" y2="843" stroke="#FFFFFF" stroke-width="6"/>
+
+  <!-- ① TikTok Shop (左上) -->
+  <rect x="0" y="0" width="1250" height="843" fill="url(#grad-tiktok)"/>
+  <!-- TikTok ロゴ風アクセント -->
+  <circle cx="160" cy="160" r="120" fill="#FFFFFF" opacity="0.04"/>
+  <circle cx="1100" cy="700" r="200" fill="#FFFFFF" opacity="0.03"/>
+  <!-- アイコン背景円 -->
+  <circle cx="625" cy="330" r="130" fill="#FFFFFF" opacity="0.12"/>
+  <!-- カート絵文字代替 -->
+  <text x="625" y="390" font-size="160" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF">🛒</text>
+  <!-- ラベル -->
+  <text x="625" y="560" font-size="88" font-weight="700" text-anchor="middle" fill="#FFFFFF" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif">TikTok Shop</text>
+  <!-- サブテキスト -->
+  <rect x="375" y="620" width="500" height="68" rx="34" fill="#FFFFFF" opacity="0.15"/>
+  <text x="625" y="666" font-size="48" text-anchor="middle" fill="#FFFFFF" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" opacity="0.9">新規購入はこちら</text>
+  <!-- TikTok ブランドカラーアクセント -->
+  <rect x="0" y="820" width="1244" height="20" fill="#69C9D0" opacity="0.6"/>
+
+  <!-- ② BASEショップ (右上) -->
+  <rect x="1256" y="0" width="1244" height="843" fill="url(#grad-base)"/>
+  <!-- 装飾円 -->
+  <circle cx="1380" cy="150" r="100" fill="#FFFFFF" opacity="0.08"/>
+  <circle cx="2380" cy="720" r="180" fill="#FFFFFF" opacity="0.05"/>
+  <!-- アイコン背景円 -->
+  <circle cx="1878" cy="330" r="130" fill="#FFFFFF" opacity="0.15"/>
+  <!-- 箱アイコン -->
+  <text x="1878" y="390" font-size="160" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF">📦</text>
+  <!-- ラベル -->
+  <text x="1878" y="560" font-size="88" font-weight="700" text-anchor="middle" fill="#FFFFFF" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif">BASEショップ</text>
+  <!-- サブテキスト -->
+  <rect x="1628" y="620" width="500" height="68" rx="34" fill="#FFFFFF" opacity="0.2"/>
+  <text x="1878" y="666" font-size="48" text-anchor="middle" fill="#FFFFFF" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" opacity="0.95">リピーター・通販注文</text>
+
+  <!-- ③ 直売所情報 (左下) -->
+  <rect x="0" y="849" width="1250" height="837" fill="url(#grad-shop)"/>
+  <!-- 装飾円 -->
+  <circle cx="140" cy="1000" r="90" fill="#FFFFFF" opacity="0.06"/>
+  <circle cx="1120" cy="1620" r="160" fill="#FFFFFF" opacity="0.05"/>
+  <!-- アイコン背景円 -->
+  <circle cx="625" cy="1160" r="130" fill="#FFFFFF" opacity="0.15"/>
+  <!-- 店舗アイコン -->
+  <text x="625" y="1220" font-size="160" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF">🏪</text>
+  <!-- ラベル -->
+  <text x="625" y="1390" font-size="88" font-weight="700" text-anchor="middle" fill="#FFFFFF" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif">直売所情報</text>
+  <!-- サブテキスト -->
+  <rect x="325" y="1450" width="600" height="68" rx="34" fill="#FFFFFF" opacity="0.2"/>
+  <text x="625" y="1496" font-size="48" text-anchor="middle" fill="#FFFFFF" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" opacity="0.95">営業時間・場所・商品</text>
+
+  <!-- ④ SNS一覧 (右下) -->
+  <rect x="1256" y="849" width="1244" height="837" fill="url(#grad-sns)"/>
+  <!-- 装飾円 -->
+  <circle cx="1380" cy="980" r="100" fill="#FFFFFF" opacity="0.07"/>
+  <circle cx="2400" cy="1640" r="180" fill="#FFFFFF" opacity="0.05"/>
+  <!-- アイコン背景円 -->
+  <circle cx="1878" cy="1160" r="130" fill="#FFFFFF" opacity="0.15"/>
+  <!-- スマホアイコン -->
+  <text x="1878" y="1220" font-size="160" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF">📱</text>
+  <!-- ラベル -->
+  <text x="1878" y="1390" font-size="88" font-weight="700" text-anchor="middle" fill="#FFFFFF" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif">SNS一覧</text>
+  <!-- サブテキスト -->
+  <rect x="1678" y="1450" width="400" height="68" rx="34" fill="#FFFFFF" opacity="0.2"/>
+  <text x="1878" y="1496" font-size="48" text-anchor="middle" fill="#FFFFFF" font-family="'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif" opacity="0.95">フォローしてね</text>
+
+  <!-- 外枠 -->
+  <rect x="0" y="0" width="2500" height="1686" fill="none" stroke="#EEEEEE" stroke-width="4"/>
+</svg>
