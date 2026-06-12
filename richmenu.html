@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>清流農園 LINE リッチメニュー仕様書</title>
+  <style>
+    :root {
+      --orange: #E8762A;
+      --orange-light: #F5A05A;
+      --orange-pale: #FFF3E8;
+      --green: #4A7C3F;
+      --green-light: #6AA85E;
+      --green-pale: #EEF5EC;
+      --white: #FFFFFF;
+      --gray: #F5F5F5;
+      --text: #2C2C2C;
+      --border: #DDD;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      background: var(--gray);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ========== Header ========== */
+    header {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+      color: var(--white);
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    header .logo-mark {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+    header h1 {
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    header p {
+      margin-top: 8px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* ========== Layout ========== */
+    main {
+      max-width: 840px;
+      margin: 32px auto;
+      padding: 0 16px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ========== Card ========== */
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+    .card-header {
+      background: var(--green);
+      color: var(--white);
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .card-body {
+      padding: 24px;
+    }
+
+    /* ========== Rich Menu Preview ========== */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .menu-cell {
+      border-radius: 12px;
+      padding: 24px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .menu-cell:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,.15);
+    }
+    .menu-cell .icon { font-size: 36px; }
+    .menu-cell .label {
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .menu-cell .sub {
+      font-size: 11px;
+      opacity: .75;
+      text-align: center;
+    }
+
+    .cell-tiktok  { background: linear-gradient(135deg, #010101 0%, #2C2C2C 100%); color: var(--white); }
+    .cell-base    { background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%); color: var(--white); }
+    .cell-shop    { background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%); color: var(--white); }
+    .cell-sns     { background: linear-gradient(135deg, #5B6EAE 0%, #7B8FCE 100%); color: var(--white); }
+
+    /* ========== Button Spec Table ========== */
+    .spec-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .spec-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .spec-item-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .spec-item-header .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .si-tiktok .spec-item-header { background: #1A1A1A; color: var(--white); }
+    .si-tiktok .num { background: var(--white); color: #1A1A1A; }
+    .si-base   .spec-item-header { background: var(--orange-pale); color: var(--orange); border-bottom: 1px solid #F5C8A0; }
+    .si-base   .num { background: var(--orange); color: var(--white); }
+    .si-shop   .spec-item-header { background: var(--green-pale); color: var(--green); border-bottom: 1px solid #BDD9B8; }
+    .si-shop   .num { background: var(--green); color: var(--white); }
+    .si-sns    .spec-item-header { background: #EEF0F9; color: #5B6EAE; border-bottom: 1px solid #C8CEEA; }
+    .si-sns    .num { background: #5B6EAE; color: var(--white); }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .spec-table tr:not(:last-child) td { border-bottom: 1px solid var(--border); }
+    .spec-table td {
+      padding: 10px 20px;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    .spec-table td:first-child {
+      width: 110px;
+      font-weight: 600;
+      color: #666;
+      white-space: nowrap;
+    }
+    .spec-table a { color: var(--orange); word-break: break-all; }
+
+    /* ========== Design Spec ========== */
+    .color-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+    .chip-swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,.1);
+      flex-shrink: 0;
+    }
+
+    /* ========== Shop Info Box ========== */
+    .info-box {
+      background: var(--green-pale);
+      border-left: 4px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      font-size: 14px;
+      white-space: pre-line;
+    }
+    .info-box a { color: var(--green); }
+
+    /* ========== SNS Box ========== */
+    .sns-box {
+      background: #EEF0F9;
+      border-left: 4px solid #5B6EAE;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      font-size: 14px;
+      white-space: pre-line;
+    }
+    .sns-box a { color: #5B6EAE; word-break: break-all; }
+
+    /* ========== Footer ========== */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    @media (max-width: 480px) {
+      .menu-cell { padding: 18px 8px; }
+      .menu-cell .icon { font-size: 28px; }
+      .menu-cell .label { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">🧅</div>
+  <h1>清流農園 LINE公式アカウント<br>リッチメニュー仕様書</h1>
+  <p>TikTok・SNSから来たお客様が迷わず購入・来店できる導線</p>
+</header>
+
+<main>
+
+  <!-- ===== プレビュー ===== -->
+  <div class="card">
+    <div class="card-header">📐 リッチメニュー プレビュー（4分割 2×2）</div>
+    <div class="card-body">
+      <div class="menu-grid">
+        <a class="menu-cell cell-tiktok" href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener">
+          <span class="icon">🛒</span>
+          <span class="label">TikTok Shop</span>
+          <span class="sub">新規購入はこちら</span>
+        </a>
+        <a class="menu-cell cell-base" href="https://seiryunouen.base.shop/" target="_blank" rel="noopener">
+          <span class="icon">📦</span>
+          <span class="label">BASEショップ</span>
+          <span class="sub">リピーター・TikTok以外</span>
+        </a>
+        <div class="menu-cell cell-shop">
+          <span class="icon">🏪</span>
+          <span class="label">直売所情報</span>
+          <span class="sub">営業時間・地図</span>
+        </div>
+        <div class="menu-cell cell-sns">
+          <span class="icon">📱</span>
+          <span class="label">SNS一覧</span>
+          <span class="sub">フォローしてね</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ボタン仕様 ===== -->
+  <div class="card">
+    <div class="card-header">🔧 各ボタン詳細仕様</div>
+    <div class="card-body">
+      <div class="spec-list">
+
+        <!-- ① TikTok Shop -->
+        <div class="spec-item si-tiktok">
+          <div class="spec-item-header">
+            <span class="num">①</span>
+            🛒 TikTok Shop
+          </div>
+          <table class="spec-table">
+            <tr><td>表示名</td><td>🛒 TikTok Shop</td></tr>
+            <tr><td>動作</td><td>外部リンク</td></tr>
+            <tr><td>リンク先</td><td><a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener">https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop</a></td></tr>
+            <tr><td>目的</td><td>新規顧客の購入（TikTok Shop 商品一覧ページ）</td></tr>
+          </table>
+        </div>
+
+        <!-- ② BASE -->
+        <div class="spec-item si-base">
+          <div class="spec-item-header">
+            <span class="num">②</span>
+            📦 BASEショップ
+          </div>
+          <table class="spec-table">
+            <tr><td>表示名</td><td>📦 BASEショップ</td></tr>
+            <tr><td>動作</td><td>外部リンク</td></tr>
+            <tr><td>リンク先</td><td><a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener">https://seiryunouen.base.shop/</a></td></tr>
+            <tr><td>目的</td><td>リピーター購入・TikTok以外からの注文受付</td></tr>
+          </table>
+        </div>
+
+        <!-- ③ 直売所 -->
+        <div class="spec-item si-shop">
+          <div class="spec-item-header">
+            <span class="num">③</span>
+            🏪 直売所情報
+          </div>
+          <table class="spec-table">
+            <tr><td>表示名</td><td>🏪 直売所情報</td></tr>
+            <tr><td>動作</td><td>テキスト表示 または URL</td></tr>
+            <tr><td>表示内容</td>
+              <td>
+                <div class="info-box">株式会社清流農園
+
+【営業時間】
+11時〜17時
+
+【住所】
+北海道網走郡津別町最上291番地
+
+【Googleマップ】
+<a href="https://maps.app.goo.gl/miCsWeoq8X68nEB1A" target="_blank" rel="noopener">https://maps.app.goo.gl/miCsWeoq8X68nEB1A</a>
+
+【販売商品】
+・玉ねぎ
+・季節野菜
+・加工品（予定）</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- ④ SNS -->
+        <div class="spec-item si-sns">
+          <div class="spec-item-header">
+            <span class="num">④</span>
+            📱 SNS一覧
+          </div>
+          <table class="spec-table">
+            <tr><td>表示名</td><td>📱 SNS一覧</td></tr>
+            <tr><td>動作</td><td>テキスト表示</td></tr>
+            <tr><td>表示内容</td>
+              <td>
+                <div class="sns-box">【TikTok】
+<a href="https://www.tiktok.com/@kitanokoropo?_r=1&_t=ZS-979JmEijSle" target="_blank" rel="noopener">https://www.tiktok.com/@kitanokoropo</a></div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== デザイン仕様 ===== -->
+  <div class="card">
+    <div class="card-header">🎨 デザイン仕様</div>
+    <div class="card-body" style="display:flex;flex-direction:column;gap:20px;">
+      <div>
+        <p style="font-weight:700;margin-bottom:12px;">カラーパレット</p>
+        <div class="color-chips">
+          <div class="chip">
+            <div class="chip-swatch" style="background:#E8762A;"></div>
+            <div>
+              <div style="font-weight:600;">メインカラー</div>
+              <div style="color:#666;font-size:12px;">#E8762A — 玉ねぎオレンジ</div>
+            </div>
+          </div>
+          <div class="chip">
+            <div class="chip-swatch" style="background:#4A7C3F;"></div>
+            <div>
+              <div style="font-weight:600;">サブカラー</div>
+              <div style="color:#666;font-size:12px;">#4A7C3F — 農園グリーン</div>
+            </div>
+          </div>
+          <div class="chip">
+            <div class="chip-swatch" style="background:#FFFFFF;border:1px solid #DDD;"></div>
+            <div>
+              <div style="font-weight:600;">背景</div>
+              <div style="color:#666;font-size:12px;">#FFFFFF — ホワイト</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="font-weight:700;margin-bottom:8px;">レイアウト</p>
+        <table class="spec-table" style="border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+          <tr><td>分割</td><td>4分割（2列 × 2行）</td></tr>
+          <tr><td>推奨サイズ</td><td>2500 × 1686 px（LINEリッチメニュー標準）</td></tr>
+          <tr><td>各セル</td><td>1250 × 843 px</td></tr>
+          <tr><td>角丸</td><td>12px（デザイン上の推奨）</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 株式会社清流農園 — LINE公式アカウント リッチメニュー仕様書
+</footer>
+
+</body>
+</html>
