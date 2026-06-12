@@ -119,11 +119,11 @@
       position: absolute; inset: 0;
       background:
         linear-gradient(165deg,
-          rgba(20,38,14,.82) 0%,
-          rgba(30,55,20,.68) 40%,
-          rgba(42,74,30,.52) 70%,
-          rgba(60,95,42,.38) 100%),
-        linear-gradient(180deg, #4a7030 0%, #6a9040 35%, #90b860 65%, #b8d888 100%);
+          rgba(20,38,14,.72) 0%,
+          rgba(30,55,20,.55) 40%,
+          rgba(42,74,30,.42) 70%,
+          rgba(60,95,42,.28) 100%),
+        url('images/field1.jpg') center center / cover no-repeat;
     }
     /* 稲穂シルエット */
     .hero-silhouette {
@@ -356,9 +356,10 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 88px; position: relative;
     }
-    .story-vis.s1 { background: linear-gradient(135deg,#1e3c10,#3a6428); }
-    .story-vis.s2 { background: linear-gradient(135deg,#5a3010,#9a5820); }
-    .story-vis.s3 { background: linear-gradient(135deg,#101e3c,#203070); }
+    .story-vis.s1 { background: url('images/field2.jpg') center center / cover no-repeat; }
+    .story-vis.s2 { background: url('images/harvest.jpg') center center / cover no-repeat; }
+    .story-vis.s3 { background: url('images/field4.jpg') center center / cover no-repeat; }
+    .story-vis .story-vis-tag { text-shadow: 0 1px 4px rgba(0,0,0,.6); }
     .story-vis-tag {
       position: absolute; top: 20px; left: 20px;
       font-size: 10px; font-weight: 500; letter-spacing: .15em; color: rgba(255,255,255,.45); text-transform: uppercase;
@@ -398,8 +399,8 @@
       display: flex; align-items: center; justify-content: center; font-size: 64px;
       position: relative;
     }
-    .prod-img.v1 { background: linear-gradient(135deg,#fff3e0,#ffd28a); }
-    .prod-img.v2 { background: linear-gradient(135deg,#e8f5e0,#b8d890); }
+    .prod-img.v1 { background: url('images/harvest.jpg') center center / cover no-repeat; }
+    .prod-img.v2 { background: url('images/field3.jpg') center center / cover no-repeat; }
     .prod-img.v3 { background: linear-gradient(135deg,#faf5e0,#eed880); }
     .prod-sticker {
       position: absolute; top: 10px; left: 10px;
@@ -1001,7 +1002,7 @@
   </div>
   <div class="story-rows">
     <div class="story-row">
-      <div class="story-vis s1">🌱<span class="story-vis-tag">Beginning</span></div>
+      <div class="story-vis s1"><span class="story-vis-tag">Beginning</span></div>
       <div class="story-txt">
         <div class="story-ch">Chapter 01</div>
         <h3 class="story-h">北海道の大地と向き合う</h3>
@@ -1014,7 +1015,7 @@
       </div>
     </div>
     <div class="story-row">
-      <div class="story-vis s2">🧅<span class="story-vis-tag">Cultivation</span></div>
+      <div class="story-vis s2"><span class="story-vis-tag">Cultivation</span></div>
       <div class="story-txt">
         <div class="story-ch">Chapter 02</div>
         <h3 class="story-h">こだわりの一貫管理</h3>
@@ -1027,7 +1028,7 @@
       </div>
     </div>
     <div class="story-row">
-      <div class="story-vis s3">📱<span class="story-vis-tag">Future</span></div>
+      <div class="story-vis s3"><span class="story-vis-tag">Future</span></div>
       <div class="story-txt">
         <div class="story-ch">Chapter 03</div>
         <h3 class="story-h">TikTokで農業の未来をひらく</h3>
@@ -1050,7 +1051,7 @@
     <p class="sec-lead">津別町の大地が育てた野菜を、産地直送でお届けします。</p>
     <div class="products-grid">
       <div class="prod-card">
-        <div class="prod-img v1">🧅<span class="prod-sticker on">販売中</span></div>
+        <div class="prod-img v1"><span class="prod-sticker on">販売中</span></div>
         <div class="prod-body">
           <div class="prod-en">Onion</div>
           <div class="prod-name">北海道産 玉ねぎ</div>
@@ -1064,7 +1065,7 @@
         </div>
       </div>
       <div class="prod-card">
-        <div class="prod-img v2">🥬<span class="prod-sticker sea">季節限定</span></div>
+        <div class="prod-img v2"><span class="prod-sticker sea">季節限定</span></div>
         <div class="prod-body">
           <div class="prod-en">Vegetables</div>
           <div class="prod-name">季節の野菜</div>
@@ -1077,7 +1078,7 @@
         </div>
       </div>
       <div class="prod-card">
-        <div class="prod-img v3">🍯<span class="prod-sticker soon">準備中</span></div>
+        <div class="prod-img v3"><span class="prod-sticker soon">準備中</span></div>
         <div class="prod-body">
           <div class="prod-en">Processed</div>
           <div class="prod-name">加工品</div>
