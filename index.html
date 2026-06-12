@@ -3,752 +3,810 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>株式会社清流農園 | 北海道津別町の玉ねぎ直送</title>
+  <title>株式会社清流農園 | 北海道津別町の玉ねぎ</title>
   <meta name="description" content="北海道網走郡津別町から新鮮な玉ねぎを全国へお届け。生産・選別・発送まで一貫管理の清流農園です。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* ===== VARIABLES ===== */
     :root {
-      --green:       #2b7a00;
-      --green-mid:   #3d9a00;
-      --green-light: #5db800;
-      --green-pale:  #f0f8e8;
-      --green-dark:  #1a4d00;
-      --accent:      #e8762a;
-      --accent-pale: #fff3e8;
+      --cream:      #faf7f2;
+      --cream-dark: #f0ebe0;
+      --beige:      #e8dfc8;
+      --brown:      #7a5a32;
+      --brown-light:#a07848;
+      --forest:     #2a4a1e;
+      --forest-mid: #3a6428;
+      --forest-light:#5a8a40;
+      --forest-pale: #edf4e8;
+      --green-bright:#4caf30;
       --white: #fff;
-      --gray-50:  #f9fafb;
-      --gray-100: #f3f4f6;
-      --gray-200: #e5e7eb;
-      --gray-400: #9ca3af;
-      --gray-500: #6b7280;
-      --gray-700: #374151;
-      --gray-900: #111827;
-      --text: #1f2937;
-      --r-sm: 6px;
-      --r:    12px;
-      --r-lg: 20px;
-      --shadow-sm: 0 1px 4px rgba(0,0,0,.07);
-      --shadow:    0 4px 20px rgba(0,0,0,.09);
-      --shadow-lg: 0 12px 40px rgba(0,0,0,.13);
+      --text:     #2a2218;
+      --text-mid: #5a4e3a;
+      --text-light:#8a7a62;
+      --border:   #ddd4c0;
+      --r-sm: 4px;
+      --r:    10px;
+      --r-lg: 18px;
+      --shadow-sm: 0 2px 8px rgba(42,34,24,.07);
+      --shadow:    0 6px 24px rgba(42,34,24,.1);
+      --shadow-lg: 0 16px 48px rgba(42,34,24,.14);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
-      color: var(--text); background: var(--white);
-      line-height: 1.75; -webkit-font-smoothing: antialiased;
+      background: var(--cream); color: var(--text);
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
-    /* ===== HEADER ===== */
+    /* ========== HEADER ========== */
     #header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-      height: 68px;
-      background: #fff;
-      border-bottom: 1px solid var(--gray-200);
+      height: 70px;
+      background: rgba(250,247,242,.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
       transition: box-shadow .3s;
     }
-    #header.scrolled { box-shadow: var(--shadow); }
-    .header-wrap {
+    #header.scrolled { box-shadow: var(--shadow-sm); }
+    .header-inner {
       max-width: 1160px; margin: 0 auto; height: 100%;
-      display: flex; align-items: center; gap: 40px;
-      padding: 0 24px;
+      display: flex; align-items: center; gap: 0;
+      padding: 0 28px;
     }
     .logo {
-      display: flex; align-items: center; gap: 10px;
-      flex-shrink: 0;
+      display: flex; align-items: center; gap: 11px; flex-shrink: 0;
     }
-    .logo-icon {
-      width: 36px; height: 36px; border-radius: 8px;
-      background: linear-gradient(135deg, var(--green), var(--green-light));
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--forest);
       display: flex; align-items: center; justify-content: center; font-size: 18px;
     }
-    .logo-name {
-      font-size: 15px; font-weight: 900; color: var(--green-dark); line-height: 1.2;
+    .logo-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px; font-weight: 700; color: var(--forest);
+      line-height: 1.2;
     }
-    .logo-name small { display: block; font-size: 10px; font-weight: 500; color: var(--gray-400); letter-spacing: .08em; }
-    .header-nav {
-      display: flex; align-items: center; gap: 28px; flex: 1;
+    .logo-text small { display: block; font-family: 'Noto Sans JP', sans-serif; font-size: 9.5px; font-weight: 400; color: var(--text-light); letter-spacing: .1em; margin-top: 1px; }
+    .h-nav {
+      display: flex; align-items: center; gap: 26px; margin-left: 36px; flex: 1;
     }
-    .header-nav a {
-      font-size: 13.5px; font-weight: 500; color: var(--gray-700);
-      white-space: nowrap; transition: color .2s;
+    .h-nav a {
+      font-size: 12.5px; font-weight: 500; color: var(--text-mid);
+      letter-spacing: .04em; transition: color .2s; white-space: nowrap;
     }
-    .header-nav a:hover { color: var(--green); }
-    .header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; flex-shrink: 0; }
-    .btn-sm-line {
+    .h-nav a:hover { color: var(--forest); }
+    .h-actions { display: flex; gap: 9px; margin-left: auto; flex-shrink: 0; }
+    .btn-h-line {
       display: inline-flex; align-items: center; gap: 5px;
       background: #06C755; color: #fff;
       padding: 8px 16px; border-radius: 40px;
-      font-size: 12.5px; font-weight: 700;
+      font-size: 12px; font-weight: 700; letter-spacing: .02em;
       transition: opacity .2s;
     }
-    .btn-sm-line:hover { opacity: .85; }
-    .btn-sm-shop {
+    .btn-h-line:hover { opacity: .85; }
+    .btn-h-shop {
       display: inline-flex; align-items: center; gap: 5px;
-      background: var(--green); color: #fff;
+      background: var(--forest); color: #fff;
       padding: 8px 16px; border-radius: 40px;
-      font-size: 12.5px; font-weight: 700;
+      font-size: 12px; font-weight: 700; letter-spacing: .02em;
       transition: opacity .2s;
     }
-    .btn-sm-shop:hover { opacity: .85; }
+    .btn-h-shop:hover { opacity: .85; }
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; margin-left: auto;
+      cursor: pointer; margin-left: auto; padding: 4px;
     }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-700); border-radius: 2px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); border-radius: 2px; }
     .mobile-nav {
-      display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0;
-      background: #fff; z-index: 299; flex-direction: column;
-      align-items: center; justify-content: center; gap: 28px;
+      display: none; position: fixed; top: 70px; left: 0; right: 0; bottom: 0;
+      background: var(--cream); z-index: 299;
+      flex-direction: column; align-items: center; justify-content: center; gap: 26px;
     }
     .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-size: 17px; font-weight: 700; color: var(--green-dark); }
+    .mobile-nav a { font-size: 16px; font-weight: 500; color: var(--forest); letter-spacing: .06em; }
 
-    /* ===== HERO ===== */
+    /* ========== HERO ========== */
     .hero {
-      margin-top: 68px;
-      min-height: 88vh;
-      position: relative; overflow: hidden;
-      display: flex; align-items: center;
+      margin-top: 70px;
+      min-height: 90vh; position: relative;
+      display: flex; align-items: center; overflow: hidden;
     }
-    /* 農場風グラデーション背景 */
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        linear-gradient(160deg,
-          rgba(15,40,5,.78) 0%,
-          rgba(22,58,8,.65) 45%,
-          rgba(35,80,15,.50) 75%,
-          rgba(50,100,20,.38) 100%),
-        linear-gradient(180deg, #6baa2a 0%, #8cc840 30%, #a8d860 60%, #c8e880 100%);
+        linear-gradient(165deg,
+          rgba(20,38,14,.82) 0%,
+          rgba(30,55,20,.68) 40%,
+          rgba(42,74,30,.52) 70%,
+          rgba(60,95,42,.38) 100%),
+        linear-gradient(180deg, #4a7030 0%, #6a9040 35%, #90b860 65%, #b8d888 100%);
     }
-    /* 稜線シルエット */
-    .hero-horizon {
+    /* 稲穂シルエット */
+    .hero-silhouette {
       position: absolute; bottom: 0; left: 0; right: 0; pointer-events: none;
     }
     .hero-content {
       position: relative; z-index: 2;
       max-width: 1160px; margin: 0 auto;
-      padding: 80px 24px 120px;
+      padding: 100px 28px 130px;
       width: 100%;
     }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
-      backdrop-filter: blur(8px); color: #fff;
-      font-size: 11.5px; font-weight: 700; letter-spacing: .1em;
-      padding: 6px 16px; border-radius: 40px; margin-bottom: 24px;
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(255,255,255,.65); margin-bottom: 28px;
     }
-    .hero-tag-dot { width: 6px; height: 6px; background: #a3e635; border-radius: 50%; animation: blink 2s infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 24px; height: 1px; background: rgba(255,255,255,.4);
+    }
     .hero h1 {
-      font-size: clamp(30px, 5.5vw, 62px);
-      font-weight: 900; color: #fff; line-height: 1.2;
-      letter-spacing: -.01em; margin-bottom: 20px;
-      text-shadow: 0 2px 16px rgba(0,0,0,.2);
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(28px, 5vw, 60px);
+      font-weight: 700; color: #fff; line-height: 1.35;
+      letter-spacing: .02em; margin-bottom: 24px;
+      text-shadow: 0 2px 20px rgba(0,0,0,.2);
     }
-    .hero h1 b { color: #a3e635; font-weight: 900; }
-    .hero-lead {
-      font-size: clamp(14px, 1.8vw, 17px); color: rgba(255,255,255,.85);
-      max-width: 500px; line-height: 2; margin-bottom: 40px;
+    .hero h1 em {
+      font-style: normal;
+      display: block;
+      font-size: .75em;
+      color: rgba(255,255,255,.75);
+      font-weight: 400;
+      margin-top: 8px;
+      font-family: 'Noto Sans JP', sans-serif;
+      letter-spacing: .04em;
     }
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 64px; }
-    .btn-hero {
+    .hero-tagline {
+      font-size: clamp(13px, 1.6vw, 16px);
+      color: rgba(255,255,255,.78); line-height: 2;
+      max-width: 460px; margin-bottom: 44px;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 72px; }
+    .btn-hero-main {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--green); color: #fff;
-      padding: 15px 32px; border-radius: 40px;
-      font-size: 14px; font-weight: 700;
-      box-shadow: 0 6px 24px rgba(43,122,0,.45);
+      background: var(--cream); color: var(--forest);
+      padding: 14px 30px; border-radius: 40px;
+      font-size: 13.5px; font-weight: 700;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
       transition: transform .2s, box-shadow .2s;
     }
-    .btn-hero:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(43,122,0,.5); }
+    .btn-hero-main:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
     .btn-hero-line {
       display: inline-flex; align-items: center; gap: 8px;
       background: #06C755; color: #fff;
-      padding: 15px 32px; border-radius: 40px;
-      font-size: 14px; font-weight: 700;
-      box-shadow: 0 6px 24px rgba(6,199,85,.35);
+      padding: 14px 30px; border-radius: 40px;
+      font-size: 13.5px; font-weight: 700;
+      box-shadow: 0 4px 16px rgba(6,199,85,.35);
       transition: transform .2s;
     }
     .btn-hero-line:hover { transform: translateY(-2px); }
     .btn-hero-ghost {
       display: inline-flex; align-items: center; gap: 8px;
-      background: transparent; color: #fff;
-      border: 2px solid rgba(255,255,255,.55);
+      border: 1px solid rgba(255,255,255,.45); color: rgba(255,255,255,.85);
       padding: 13px 28px; border-radius: 40px;
-      font-size: 14px; font-weight: 700;
+      font-size: 13.5px; font-weight: 500;
       transition: all .2s;
     }
-    .btn-hero-ghost:hover { background: rgba(255,255,255,.12); }
-    /* 実績数字 */
-    .hero-stats {
-      display: flex; gap: 40px; flex-wrap: wrap;
+    .btn-hero-ghost:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.7); }
+    /* 数字 */
+    .hero-nums {
+      display: flex; gap: 0; flex-wrap: wrap;
     }
-    .hero-stat-num {
-      font-size: clamp(26px,4vw,44px); font-weight: 900; color: #fff; line-height: 1;
+    .hero-num {
+      padding-right: 36px; margin-right: 36px;
+      border-right: 1px solid rgba(255,255,255,.18);
     }
-    .hero-stat-num span { font-size: .55em; font-weight: 700; }
-    .hero-stat-label { font-size: 11.5px; color: rgba(255,255,255,.65); margin-top: 4px; letter-spacing: .05em; }
-    .hero-stat { padding-right: 40px; border-right: 1px solid rgba(255,255,255,.2); }
-    .hero-stat:last-child { border: none; padding-right: 0; }
+    .hero-num:last-child { border: none; }
+    .hero-num-val {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(22px,3.5vw,40px); font-weight: 700; color: #fff; line-height: 1;
+    }
+    .hero-num-val span { font-size: .55em; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; }
+    .hero-num-label { font-size: 11px; color: rgba(255,255,255,.55); margin-top: 6px; letter-spacing: .06em; }
     /* スクロール */
-    .scroll-arrow {
-      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 4px;
-      color: rgba(255,255,255,.55); font-size: 10px; letter-spacing: .12em; font-weight: 700;
-      animation: bounce 2.2s ease-in-out infinite;
+    .scroll-hint {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: rgba(255,255,255,.45); font-size: 9px; font-weight: 500; letter-spacing: .18em;
+      animation: sb 2s ease-in-out infinite;
     }
-    .scroll-arrow::after { content: '↓'; font-size: 18px; color: rgba(255,255,255,.6); }
-    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+    .scroll-hint::after { content: ''; display: block; width: 1px; height: 36px; background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent); }
+    @keyframes sb { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
 
-    /* ===== MISSION BAR ===== */
-    .mission-bar {
-      background: var(--green);
-      padding: 32px 24px;
-      text-align: center;
-    }
-    .mission-bar-inner {
-      max-width: 1160px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: center; gap: 32px;
-      flex-wrap: wrap;
-    }
-    .mission-text {
-      font-size: clamp(16px, 2.5vw, 22px);
-      font-weight: 900; color: #fff; letter-spacing: .04em;
-    }
-    .mission-sub { font-size: 13px; color: rgba(255,255,255,.75); }
-    .mission-divider { width: 1px; height: 40px; background: rgba(255,255,255,.3); }
-
-    /* ===== COMMON ===== */
-    section { padding: 88px 24px; }
+    /* ========== COMMON ========== */
+    section { padding: 96px 28px; }
     .inner { max-width: 1160px; margin: 0 auto; }
-    .inner-mid { max-width: 900px; margin: 0 auto; }
+    .inner-mid { max-width: 920px; margin: 0 auto; }
     .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: var(--green); font-size: 11.5px; font-weight: 700;
-      letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px;
+      font-size: 10.5px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--forest-mid); margin-bottom: 12px;
+      display: flex; align-items: center; gap: 10px;
     }
-    .eyebrow::before { content: ''; display: block; width: 18px; height: 2px; background: var(--green); border-radius: 2px; }
+    .eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--forest-mid); }
     .sec-title {
-      font-size: clamp(22px, 3.5vw, 36px); font-weight: 900;
-      line-height: 1.3; color: var(--gray-900); margin-bottom: 14px;
-      letter-spacing: -.01em;
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(22px, 3.5vw, 38px); font-weight: 700;
+      line-height: 1.35; color: var(--text); margin-bottom: 16px;
+      letter-spacing: .01em;
     }
-    .sec-lead { font-size: 14.5px; color: var(--gray-500); line-height: 1.95; margin-bottom: 52px; max-width: 520px; }
+    .sec-lead {
+      font-size: 14.5px; color: var(--text-mid); line-height: 2;
+      max-width: 500px; margin-bottom: 56px;
+    }
 
-    /* ===== SERVICES（サービス） ===== */
-    .services { background: var(--gray-50); }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
+    /* ========== INTRO BAND ========== */
+    .intro-band {
+      background: var(--forest);
+      padding: 36px 28px;
     }
-    .svc-card {
-      background: #fff; border-radius: var(--r-lg);
-      padding: 36px 32px;
+    .intro-band-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;
+    }
+    .intro-band-main {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(15px,2.2vw,20px); font-weight: 700; color: #fff;
+      letter-spacing: .06em;
+    }
+    .intro-band-sep { width: 1px; height: 36px; background: rgba(255,255,255,.25); }
+    .intro-band-sub { font-size: 12.5px; color: rgba(255,255,255,.65); max-width: 360px; line-height: 1.9; }
+
+    /* ========== FEATURES ========== */
+    .features { background: var(--cream); }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
+    }
+    .feat-card {
+      background: var(--white); border-radius: var(--r-lg);
+      padding: 40px 32px; border: 1px solid var(--border);
       box-shadow: var(--shadow-sm);
-      border: 1px solid var(--gray-200);
-      transition: transform .25s, box-shadow .25s, border-color .25s;
-      display: flex; flex-direction: column;
+      transition: transform .25s, box-shadow .25s;
     }
-    .svc-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--green-pale); }
-    .svc-icon {
-      width: 56px; height: 56px; border-radius: var(--r);
-      background: var(--green-pale);
-      display: flex; align-items: center; justify-content: center; font-size: 26px;
-      margin-bottom: 20px;
+    .feat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .feat-num {
+      font-size: 10px; font-weight: 500; color: var(--forest-light);
+      letter-spacing: .15em; margin-bottom: 22px;
     }
-    .svc-title { font-size: 17px; font-weight: 800; margin-bottom: 10px; color: var(--gray-900); }
-    .svc-desc { font-size: 13.5px; color: var(--gray-500); line-height: 1.9; flex: 1; }
-    .svc-link {
-      display: inline-flex; align-items: center; gap: 4px;
-      margin-top: 20px; font-size: 13px; font-weight: 700; color: var(--green);
-      transition: gap .2s;
+    .feat-icon {
+      width: 52px; height: 52px; border-radius: var(--r);
+      background: var(--forest-pale);
+      display: flex; align-items: center; justify-content: center; font-size: 24px;
+      margin-bottom: 18px;
     }
-    .svc-link:hover { gap: 8px; }
+    .feat-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--text);
+    }
+    .feat-body { font-size: 13px; color: var(--text-light); line-height: 1.95; }
 
-    /* ===== NUMBERS ===== */
-    .numbers { background: var(--green-dark); }
-    .numbers-grid {
-      display: grid; grid-template-columns: repeat(4,1fr);
-      gap: 1px; background: rgba(255,255,255,.1);
-      border-radius: var(--r-lg); overflow: hidden;
-      border: 1px solid rgba(255,255,255,.08);
-    }
-    .num-item {
-      background: rgba(255,255,255,.04);
-      padding: 40px 32px; text-align: center;
-      transition: background .2s;
-    }
-    .num-item:hover { background: rgba(255,255,255,.1); }
-    .num-value {
-      font-size: clamp(32px,4vw,52px); font-weight: 900; color: #a3e635;
-      line-height: 1; margin-bottom: 8px;
-    }
-    .num-value span { font-size: .5em; font-weight: 700; }
-    .num-label { font-size: 13px; color: rgba(255,255,255,.7); font-weight: 500; }
-
-    /* ===== ABOUT ===== */
+    /* ========== ABOUT ========== */
+    .about { background: var(--cream-dark); }
     .about-layout {
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
     }
     .about-visual { position: relative; }
-    .about-main-img {
-      aspect-ratio: 4/3;
-      border-radius: var(--r-lg); overflow: hidden;
-      background: linear-gradient(135deg, #1a4d00, #3d9a00, #6ab830);
+    .about-main {
+      aspect-ratio: 4/3; border-radius: var(--r-lg);
+      background: linear-gradient(135deg, #1e3c10 0%, #3a6428 50%, #5a8a40 100%);
       display: flex; align-items: center; justify-content: center; font-size: 96px;
+      overflow: hidden;
     }
-    .about-sub-img {
-      position: absolute; bottom: -20px; right: -20px;
-      width: 44%; aspect-ratio: 1;
-      border-radius: var(--r-lg);
-      background: linear-gradient(135deg, #e8762a, #f5a45a);
-      display: flex; align-items: center; justify-content: center; font-size: 48px;
-      border: 4px solid #fff; box-shadow: var(--shadow-lg);
+    .about-sub {
+      position: absolute; bottom: -18px; right: -18px;
+      width: 46%; aspect-ratio: 1; border-radius: var(--r-lg);
+      background: linear-gradient(135deg, #7a5a32, #b08040);
+      display: flex; align-items: center; justify-content: center; font-size: 46px;
+      border: 4px solid var(--cream-dark); box-shadow: var(--shadow-lg);
     }
-    .about-body { font-size: 14.5px; color: var(--gray-500); line-height: 2; margin-bottom: 36px; }
-    .about-points { display: flex; flex-direction: column; gap: 16px; }
+    .about-badge {
+      position: absolute; top: 18px; left: 18px;
+      background: var(--forest); color: #fff;
+      font-size: 10.5px; font-weight: 700; letter-spacing: .1em;
+      padding: 6px 14px; border-radius: 40px;
+    }
+    .about-body { font-size: 14px; color: var(--text-mid); line-height: 2.1; margin-bottom: 36px; }
+    .about-points { display: flex; flex-direction: column; gap: 14px; }
     .about-pt {
       display: flex; align-items: flex-start; gap: 14px;
-      padding: 18px 20px; background: var(--green-pale);
-      border-radius: var(--r); border-left: 3px solid var(--green);
+      padding: 16px 18px; background: var(--white);
+      border-radius: var(--r); border-left: 2px solid var(--forest-light);
+      box-shadow: var(--shadow-sm);
     }
-    .about-pt-icon { font-size: 24px; flex-shrink: 0; line-height: 1; }
-    .about-pt-title { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
-    .about-pt-body { font-size: 12.5px; color: var(--gray-500); }
+    .about-pt-icon { font-size: 22px; flex-shrink: 0; line-height: 1; margin-top: 1px; }
+    .about-pt-title { font-size: 13.5px; font-weight: 700; margin-bottom: 2px; }
+    .about-pt-body  { font-size: 12px; color: var(--text-light); }
 
-    /* ===== STORY ===== */
-    .story { background: var(--gray-50); overflow: hidden; }
-    .story-track { display: flex; flex-direction: column; gap: 0; }
+    /* ========== NUMBERS ========== */
+    .numbers-sec { background: var(--forest); padding: 72px 28px; }
+    .numbers-header { text-align: center; margin-bottom: 48px; }
+    .numbers-header .eyebrow { justify-content: center; color: rgba(255,255,255,.55); }
+    .numbers-header .eyebrow::before { background: rgba(255,255,255,.3); }
+    .numbers-header .sec-title { color: #fff; }
+    .num-grid {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 2px;
+      border-radius: var(--r-lg); overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .num-box {
+      background: rgba(255,255,255,.05); padding: 40px 28px; text-align: center;
+      transition: background .2s;
+    }
+    .num-box:hover { background: rgba(255,255,255,.1); }
+    .num-val {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(28px,4vw,50px); font-weight: 700; color: #c8e880; line-height: 1;
+      margin-bottom: 10px;
+    }
+    .num-val span { font-size: .52em; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; }
+    .num-label { font-size: 12.5px; color: rgba(255,255,255,.65); }
+
+    /* ========== STORY ========== */
+    .story { background: var(--cream); overflow: hidden; }
+    .story-rows { display: flex; flex-direction: column; }
     .story-row {
-      display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 340px;
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 360px;
     }
     .story-row:nth-child(even) { direction: rtl; }
     .story-row:nth-child(even) > * { direction: ltr; }
-    .story-visual {
+    .story-vis {
       display: flex; align-items: center; justify-content: center;
       font-size: 88px; position: relative;
     }
-    .story-visual.sv1 { background: linear-gradient(135deg, #1a4000, #3d9a00); }
-    .story-visual.sv2 { background: linear-gradient(135deg, #4a2000, #8a4500); }
-    .story-visual.sv3 { background: linear-gradient(135deg, #001a40, #003580); }
-    .story-chapter-badge {
+    .story-vis.s1 { background: linear-gradient(135deg,#1e3c10,#3a6428); }
+    .story-vis.s2 { background: linear-gradient(135deg,#5a3010,#9a5820); }
+    .story-vis.s3 { background: linear-gradient(135deg,#101e3c,#203070); }
+    .story-vis-tag {
       position: absolute; top: 20px; left: 20px;
-      font-size: 10.5px; font-weight: 700; letter-spacing: .12em;
-      color: rgba(255,255,255,.5); text-transform: uppercase;
+      font-size: 10px; font-weight: 500; letter-spacing: .15em; color: rgba(255,255,255,.45); text-transform: uppercase;
     }
-    .story-body {
-      background: #fff; padding: 56px 60px;
+    .story-txt {
+      background: var(--white); padding: 60px 64px;
       display: flex; flex-direction: column; justify-content: center;
     }
-    .story-row:nth-child(even) .story-body { padding: 56px 60px 56px 56px; }
-    .story-chapter { font-size: 11px; font-weight: 700; color: var(--green); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
-    .story-title { font-size: clamp(18px,2.5vw,26px); font-weight: 900; line-height: 1.3; margin-bottom: 14px; color: var(--gray-900); }
-    .story-text { font-size: 14px; color: var(--gray-500); line-height: 2; }
-    .story-quote {
+    .story-row:nth-child(even) .story-txt { padding: 60px 64px 60px 56px; }
+    .story-ch { font-size: 10px; font-weight: 500; letter-spacing: .16em; color: var(--forest-mid); text-transform: uppercase; margin-bottom: 10px; }
+    .story-h {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(18px,2.5vw,28px); font-weight: 700; line-height: 1.4;
+      margin-bottom: 14px; color: var(--text);
+    }
+    .story-p { font-size: 13.5px; color: var(--text-mid); line-height: 2.1; }
+    .story-q {
       margin-top: 20px; padding: 14px 18px;
-      background: var(--green-pale); border-left: 3px solid var(--green);
-      border-radius: 0 var(--r-sm) var(--r-sm) 0;
-      font-size: 12.5px; color: var(--green-dark); font-weight: 600; line-height: 1.7; font-style: italic;
+      background: var(--forest-pale); border-left: 2px solid var(--forest-mid);
+      font-size: 12.5px; color: var(--forest); font-weight: 500; line-height: 1.75;
+      font-style: italic;
     }
 
-    /* ===== PRODUCTS ===== */
-    .products { background: #fff; }
-    .products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    /* ========== PRODUCTS ========== */
+    .products { background: var(--cream-dark); }
+    .products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .prod-card {
-      border-radius: var(--r-lg); overflow: hidden;
-      box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
-      background: #fff; display: flex; flex-direction: column;
+      background: var(--white); border-radius: var(--r-lg);
+      overflow: hidden; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column;
       transition: transform .25s, box-shadow .25s;
     }
-    .prod-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-    .prod-visual {
+    .prod-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .prod-img {
       aspect-ratio: 16/10;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 68px; position: relative;
+      display: flex; align-items: center; justify-content: center; font-size: 64px;
+      position: relative;
     }
-    .prod-visual.v1 { background: linear-gradient(135deg,#fff3e8,#ffe0b0); }
-    .prod-visual.v2 { background: linear-gradient(135deg,#f0f8e8,#c8e8a0); }
-    .prod-visual.v3 { background: linear-gradient(135deg,#fffde7,#ffe082); }
-    .prod-badge {
+    .prod-img.v1 { background: linear-gradient(135deg,#fff3e0,#ffd28a); }
+    .prod-img.v2 { background: linear-gradient(135deg,#e8f5e0,#b8d890); }
+    .prod-img.v3 { background: linear-gradient(135deg,#faf5e0,#eed880); }
+    .prod-sticker {
       position: absolute; top: 10px; left: 10px;
-      font-size: 10.5px; font-weight: 700; padding: 4px 10px;
-      border-radius: 40px; letter-spacing: .04em;
+      font-size: 10px; font-weight: 700; letter-spacing: .06em;
+      padding: 4px 10px; border-radius: 40px;
     }
-    .prod-badge.on-sale  { background: var(--green); color: #fff; }
-    .prod-badge.seasonal { background: var(--accent); color: #fff; }
-    .prod-badge.coming   { background: var(--gray-200); color: var(--gray-500); }
+    .prod-sticker.on    { background: var(--forest); color: #fff; }
+    .prod-sticker.sea   { background: var(--brown); color: #fff; }
+    .prod-sticker.soon  { background: var(--beige); color: var(--text-mid); }
     .prod-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
-    .prod-cat { font-size: 10.5px; font-weight: 700; color: var(--green); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 5px; }
-    .prod-name { font-size: 17px; font-weight: 800; margin-bottom: 7px; color: var(--gray-900); }
-    .prod-desc { font-size: 13px; color: var(--gray-500); line-height: 1.85; margin-bottom: 16px; flex: 1; }
-    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
-    .chip {
-      font-size: 10.5px; font-weight: 700; padding: 3px 9px;
-      border-radius: 40px;
+    .prod-en { font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--forest-light); margin-bottom: 4px; }
+    .prod-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text);
     }
-    .chip-g { background: var(--green-pale); color: var(--green); }
-    .chip-o { background: var(--accent-pale); color: var(--accent); }
-    .chip-x { background: var(--gray-100); color: var(--gray-500); }
+    .prod-desc { font-size: 12.5px; color: var(--text-mid); line-height: 1.9; margin-bottom: 14px; flex: 1; }
+    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tag {
+      font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 40px;
+    }
+    .tag-g { background: var(--forest-pale); color: var(--forest-mid); }
+    .tag-b { background: #fff3e0; color: var(--brown); }
+    .tag-x { background: var(--cream-dark); color: var(--text-light); }
     .btn-buy {
       display: flex; align-items: center; justify-content: center; gap: 6px;
-      background: var(--green); color: #fff;
+      background: var(--forest); color: #fff;
       padding: 12px; border-radius: var(--r);
-      font-size: 13.5px; font-weight: 700;
+      font-size: 13px; font-weight: 700;
       transition: opacity .2s;
     }
     .btn-buy:hover { opacity: .88; }
-    .btn-buy.disabled { background: var(--gray-200); color: var(--gray-500); cursor: default; pointer-events: none; }
-    .products-more {
-      display: flex; justify-content: center; gap: 14px;
-      margin-top: 36px; flex-wrap: wrap;
+    .btn-buy.off { background: var(--beige); color: var(--text-light); cursor: default; pointer-events: none; }
+    .products-cta {
+      display: flex; justify-content: center; gap: 12px; margin-top: 36px; flex-wrap: wrap;
     }
-    .btn-outline {
+    .btn-outline-f {
       display: inline-flex; align-items: center; gap: 7px;
-      border: 2px solid var(--green); color: var(--green);
-      padding: 13px 28px; border-radius: 40px;
-      font-size: 13.5px; font-weight: 700;
+      border: 1.5px solid var(--forest); color: var(--forest);
+      padding: 12px 26px; border-radius: 40px;
+      font-size: 13px; font-weight: 700;
       transition: all .2s;
     }
-    .btn-outline:hover { background: var(--green); color: #fff; }
+    .btn-outline-f:hover { background: var(--forest); color: #fff; }
 
-    /* ===== RECIPE ===== */
-    .recipe { background: var(--gray-50); }
-    .recipe-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    /* ========== RECIPE ========== */
+    .recipe { background: var(--white); }
+    .recipe-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .recipe-row2 {
-      display: grid; grid-template-columns: repeat(2,1fr); gap: 22px;
-      max-width: calc(66.67% - 8px); margin: 22px auto 0;
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 20px;
+      max-width: calc(66.67% - 7px); margin: 20px auto 0;
     }
     .rec-card {
-      background: #fff; border-radius: var(--r-lg); overflow: hidden;
-      box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
+      background: var(--cream); border-radius: var(--r-lg);
+      overflow: hidden; border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
       transition: transform .25s, box-shadow .25s;
     }
-    .rec-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-    .rec-visual {
+    .rec-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .rec-img {
       aspect-ratio: 4/3;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 68px; position: relative;
-    }
-    .rec-visual.rv1 { background: linear-gradient(135deg,#fff3e8,#ffcc88); }
-    .rec-visual.rv2 { background: linear-gradient(135deg,#f0f8e8,#b8e890); }
-    .rec-visual.rv3 { background: linear-gradient(135deg,#fffde7,#ffd860); }
-    .rec-visual.rv4 { background: linear-gradient(135deg,#fff0e8,#ffb888); }
-    .rec-visual.rv5 { background: linear-gradient(135deg,#fffce0,#ffe080); }
-    .rec-diff {
-      position: absolute; top: 10px; right: 10px;
-      background: rgba(0,0,0,.5); backdrop-filter: blur(4px);
-      color: #fff; font-size: 10.5px; font-weight: 700;
-      padding: 3px 9px; border-radius: 40px;
-    }
-    .rec-body { padding: 22px; }
-    .rec-meta { font-size: 11px; color: var(--gray-400); font-weight: 600; margin-bottom: 6px; }
-    .rec-name { font-size: 16px; font-weight: 800; color: var(--gray-900); margin-bottom: 7px; }
-    .rec-desc { font-size: 12.5px; color: var(--gray-500); line-height: 1.85; margin-bottom: 14px; }
-    .rec-steps { display: flex; flex-direction: column; gap: 7px; }
-    .rec-step {
-      display: flex; gap: 9px; align-items: flex-start;
-      font-size: 12px; color: var(--gray-700); line-height: 1.6;
-    }
-    .rec-step-n {
-      width: 18px; height: 18px; border-radius: 50%;
-      background: var(--green); color: #fff;
-      font-size: 9.5px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
-    }
-    .recipe-cta { text-align: center; margin-top: 44px; }
-    .recipe-note { font-size: 13px; color: var(--gray-400); margin-top: 10px; }
-
-    /* ===== NEWS ===== */
-    .news-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; }
-    .news-list { display: flex; flex-direction: column; }
-    .news-item {
-      display: grid; grid-template-columns: 96px 72px 1fr;
-      gap: 14px; align-items: center;
-      padding: 18px 0; border-bottom: 1px solid var(--gray-200);
-    }
-    .news-item:first-child { border-top: 1px solid var(--gray-200); }
-    .news-date { font-size: 12px; color: var(--gray-400); font-weight: 500; }
-    .news-badge {
-      font-size: 10px; font-weight: 700; padding: 3px 9px;
-      border-radius: 40px; text-align: center; white-space: nowrap;
-    }
-    .nb-info { background: var(--green-pale); color: var(--green); }
-    .nb-sale { background: var(--accent-pale); color: var(--accent); }
-    .nb-sns  { background: #eff6ff; color: #2563eb; }
-    .news-text { font-size: 13.5px; font-weight: 500; }
-    /* sidebar */
-    .sidebar-box {
-      background: var(--gray-50); border-radius: var(--r-lg);
-      padding: 26px; border: 1px solid var(--gray-200);
-      margin-bottom: 20px;
-    }
-    .sidebar-box:last-child { margin-bottom: 0; }
-    .sidebar-title { font-size: 13px; font-weight: 800; color: var(--gray-900); margin-bottom: 14px; }
-    .sidebar-links { display: flex; flex-direction: column; gap: 10px; }
-    .sidebar-link {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 12.5px; font-weight: 600; color: var(--gray-700);
-      padding: 10px 12px; border-radius: var(--r);
-      background: #fff; border: 1px solid var(--gray-200);
-      transition: border-color .2s;
-    }
-    .sidebar-link:hover { border-color: var(--green-light); color: var(--green-dark); }
-
-    /* ===== SHOP ===== */
-    .shop { background: var(--green-dark); overflow: hidden; position: relative; }
-    .shop::before {
-      content: ''; position: absolute; top: 0; right: -8%; bottom: 0;
-      width: 50%; background: rgba(255,255,255,.03); transform: skewX(-5deg);
-    }
-    .shop-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .shop .eyebrow { color: rgba(255,255,255,.6); }
-    .shop .eyebrow::before { background: rgba(255,255,255,.4); }
-    .shop .sec-title { color: #fff; }
-    .shop-info-list { display: flex; flex-direction: column; gap: 18px; margin-bottom: 32px; }
-    .shop-info {
-      display: flex; gap: 14px; align-items: flex-start;
-    }
-    .shop-info-icon {
-      width: 44px; height: 44px; border-radius: var(--r);
-      background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center;
-      font-size: 20px; flex-shrink: 0;
-    }
-    .shop-info-label { font-size: 10.5px; color: rgba(255,255,255,.5); letter-spacing: .07em; margin-bottom: 2px; }
-    .shop-info-value { font-size: 14.5px; font-weight: 700; color: #fff; }
-    .shop-info-note  { font-size: 11.5px; color: rgba(255,255,255,.5); margin-top: 2px; }
-    .shop-map {
-      aspect-ratio: 4/3; border-radius: var(--r-lg);
-      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 16px; font-size: 52px;
-    }
-    .btn-map {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: #fff; color: var(--green-dark);
-      padding: 11px 22px; border-radius: 40px;
-      font-size: 12.5px; font-weight: 700;
-      transition: opacity .2s;
-    }
-    .btn-map:hover { opacity: .9; }
-    .btn-ghost-white {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(255,255,255,.12); color: #fff;
-      border: 1px solid rgba(255,255,255,.3);
-      padding: 11px 22px; border-radius: 40px;
-      font-size: 12.5px; font-weight: 700;
-      transition: background .2s;
-    }
-    .btn-ghost-white:hover { background: rgba(255,255,255,.2); }
-
-    /* ===== LINE CTA ===== */
-    .line-cta {
-      background: linear-gradient(135deg, #04a544, #06c755);
-      padding: 80px 24px; text-align: center; position: relative; overflow: hidden;
-    }
-    .line-cta::before {
-      content: ''; position: absolute; top: -40%; left: -5%;
-      width: 50%; height: 180%; background: rgba(255,255,255,.06); transform: rotate(-12deg);
-    }
-    .line-cta .eyebrow { color: rgba(255,255,255,.7); justify-content: center; }
-    .line-cta .eyebrow::before { background: rgba(255,255,255,.5); }
-    .line-cta .sec-title { color: #fff; text-align: center; }
-    .line-benefits {
-      display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin: 0 auto 40px;
-    }
-    .line-benefit {
-      background: rgba(255,255,255,.17); border: 1px solid rgba(255,255,255,.2);
-      border-radius: var(--r); padding: 18px 22px; min-width: 130px; text-align: center;
-    }
-    .line-benefit-icon { font-size: 28px; margin-bottom: 7px; }
-    .line-benefit-label { font-size: 12.5px; font-weight: 700; color: #fff; }
-    .btn-line-main {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: #fff; color: #06C755;
-      padding: 18px 48px; border-radius: 40px;
-      font-size: 16px; font-weight: 900;
-      box-shadow: 0 8px 28px rgba(0,0,0,.18);
-      transition: transform .2s;
+      display: flex; align-items: center; justify-content: center; font-size: 64px;
       position: relative;
     }
-    .btn-line-main:hover { transform: translateY(-3px); }
-    .line-note { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,.6); }
+    .rec-img.r1 { background: linear-gradient(135deg,#fff3e0,#ffc880); }
+    .rec-img.r2 { background: linear-gradient(135deg,#f0f8e0,#b8d880); }
+    .rec-img.r3 { background: linear-gradient(135deg,#faf8e0,#f0d870); }
+    .rec-img.r4 { background: linear-gradient(135deg,#fff0e8,#ffb880); }
+    .rec-img.r5 { background: linear-gradient(135deg,#fffce0,#ffe070); }
+    .rec-diff {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(42,34,24,.55); backdrop-filter: blur(4px);
+      color: #fff; font-size: 10px; font-weight: 700;
+      padding: 3px 9px; border-radius: 40px;
+    }
+    .rec-body { padding: 20px; }
+    .rec-time { font-size: 10.5px; color: var(--text-light); margin-bottom: 5px; }
+    .rec-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px;
+    }
+    .rec-desc { font-size: 12px; color: var(--text-mid); line-height: 1.85; margin-bottom: 12px; }
+    .rec-steps { display: flex; flex-direction: column; gap: 6px; }
+    .rec-step {
+      display: flex; gap: 8px; align-items: flex-start;
+      font-size: 11.5px; color: var(--text-mid); line-height: 1.6;
+    }
+    .rec-n {
+      width: 17px; height: 17px; border-radius: 50%;
+      background: var(--forest); color: #fff;
+      font-size: 9px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .recipe-cta { text-align: center; margin-top: 44px; }
+    .recipe-note { font-size: 12px; color: var(--text-light); margin-top: 10px; }
 
-    /* ===== FAQ ===== */
-    .faq { background: var(--gray-50); }
+    /* ========== NEWS ========== */
+    .news { background: var(--cream-dark); }
+    .news-layout { display: grid; grid-template-columns: 1fr 320px; gap: 52px; align-items: start; }
+    .news-list { display: flex; flex-direction: column; }
+    .news-item {
+      display: grid; grid-template-columns: 92px 70px 1fr;
+      gap: 14px; align-items: center;
+      padding: 18px 0; border-bottom: 1px solid var(--border);
+    }
+    .news-item:first-child { border-top: 1px solid var(--border); }
+    .news-date { font-size: 11.5px; color: var(--text-light); font-weight: 400; }
+    .news-tag-badge {
+      font-size: 9.5px; font-weight: 700; padding: 3px 9px;
+      border-radius: 40px; text-align: center; white-space: nowrap;
+      letter-spacing: .04em;
+    }
+    .nb-i  { background: var(--forest-pale); color: var(--forest-mid); }
+    .nb-s  { background: #fff3e0; color: var(--brown); }
+    .nb-sn { background: #eff6ff; color: #2563eb; }
+    .news-text { font-size: 13.5px; font-weight: 400; }
+    /* Sidebar */
+    .side-box {
+      background: var(--white); border-radius: var(--r-lg);
+      padding: 24px; border: 1px solid var(--border); margin-bottom: 16px;
+    }
+    .side-box:last-child { margin-bottom: 0; }
+    .side-title { font-size: 12.5px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .side-links { display: flex; flex-direction: column; gap: 8px; }
+    .side-link {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 12px; font-weight: 500; color: var(--text-mid);
+      padding: 9px 12px; border-radius: var(--r);
+      background: var(--cream); border: 1px solid var(--border);
+      transition: border-color .2s;
+    }
+    .side-link:hover { border-color: var(--forest-light); color: var(--forest); }
+
+    /* ========== SHOP ========== */
+    .shop-sec { background: var(--forest); overflow: hidden; position: relative; }
+    .shop-sec::before {
+      content: ''; position: absolute; top: 0; right: -6%; bottom: 0;
+      width: 48%; background: rgba(255,255,255,.03); transform: skewX(-4deg);
+    }
+    .shop-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .shop-sec .eyebrow { color: rgba(255,255,255,.5); }
+    .shop-sec .eyebrow::before { background: rgba(255,255,255,.3); }
+    .shop-sec .sec-title { color: #fff; }
+    .shop-info-list { display: flex; flex-direction: column; gap: 18px; margin-bottom: 32px; }
+    .shop-info-row { display: flex; gap: 14px; align-items: flex-start; }
+    .shop-info-icon {
+      width: 42px; height: 42px; border-radius: var(--r);
+      background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .shop-lbl { font-size: 10px; color: rgba(255,255,255,.45); letter-spacing: .1em; margin-bottom: 2px; text-transform: uppercase; }
+    .shop-val { font-size: 14px; font-weight: 700; color: #fff; }
+    .shop-note { font-size: 11.5px; color: rgba(255,255,255,.45); margin-top: 2px; }
+    .shop-map {
+      aspect-ratio: 4/3; border-radius: var(--r-lg);
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; font-size: 48px;
+    }
+    .btn-map-w {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; color: var(--forest);
+      padding: 10px 20px; border-radius: 40px;
+      font-size: 12px; font-weight: 700;
+      transition: opacity .2s;
+    }
+    .btn-map-w:hover { opacity: .9; }
+    .btn-ghost-w {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.1); color: #fff;
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 10px 20px; border-radius: 40px;
+      font-size: 12px; font-weight: 700;
+      transition: background .2s;
+    }
+    .btn-ghost-w:hover { background: rgba(255,255,255,.18); }
+
+    /* ========== LINE CTA ========== */
+    .line-cta-sec {
+      background: linear-gradient(135deg,#04a544,#06c755);
+      padding: 80px 28px; text-align: center; position: relative; overflow: hidden;
+    }
+    .line-cta-sec::before {
+      content: ''; position: absolute; top: -50%; left: -5%;
+      width: 50%; height: 200%; background: rgba(255,255,255,.06); transform: rotate(-14deg);
+    }
+    .line-cta-sec .eyebrow { color: rgba(255,255,255,.65); justify-content: center; }
+    .line-cta-sec .eyebrow::before { background: rgba(255,255,255,.4); }
+    .line-cta-sec .sec-title { color: #fff; font-family: 'Noto Serif JP', serif; text-align: center; }
+    .line-benefits {
+      display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0 auto 40px;
+    }
+    .line-benefit {
+      background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.2);
+      border-radius: var(--r); padding: 16px 20px; min-width: 120px; text-align: center;
+    }
+    .line-benefit-icon { font-size: 26px; margin-bottom: 6px; }
+    .line-benefit-label { font-size: 12px; font-weight: 700; color: #fff; }
+    .btn-line-big {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; color: #06C755;
+      padding: 17px 46px; border-radius: 40px;
+      font-size: 15px; font-weight: 900;
+      box-shadow: 0 8px 28px rgba(0,0,0,.16);
+      transition: transform .2s; position: relative;
+    }
+    .btn-line-big:hover { transform: translateY(-3px); }
+    .line-note { margin-top: 14px; font-size: 11.5px; color: rgba(255,255,255,.55); }
+
+    /* ========== TIKTOK ========== */
+    .tiktok-sec { background: #080808; padding: 80px 28px; }
+    .tiktok-sec .eyebrow { color: #69c9d0; }
+    .tiktok-sec .eyebrow::before { background: #69c9d0; }
+    .tiktok-sec .sec-title { color: #fff; font-family: 'Noto Sans JP', sans-serif; }
+    .tiktok-sec .sec-lead { color: rgba(255,255,255,.45); }
+    .tiktok-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 32px;
+    }
+    .tt-card {
+      aspect-ratio: 9/16; border-radius: var(--r-lg);
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding: 16px; position: relative; overflow: hidden;
+    }
+    .tt-card.c1 { background: linear-gradient(180deg,#0d3a0d,#1e5c1e); }
+    .tt-card.c2 { background: linear-gradient(180deg,#3a1c00,#6a3600); }
+    .tt-card.c3 { background: linear-gradient(180deg,#0d1a3a,#1e3060); }
+    .tt-emoji { font-size: 48px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-60%); }
+    .tt-label {
+      background: rgba(0,0,0,.55); backdrop-filter: blur(4px);
+      color: #fff; font-size: 11px; font-weight: 700;
+      padding: 5px 12px; border-radius: 40px; position: relative;
+    }
+    .tiktok-cta { text-align: center; }
+    .btn-tt {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: #fff; color: #000;
+      padding: 13px 30px; border-radius: 40px;
+      font-size: 13.5px; font-weight: 700;
+      transition: transform .2s;
+    }
+    .btn-tt:hover { transform: translateY(-2px); }
+
+    /* ========== FAQ ========== */
+    .faq-sec { background: var(--cream-dark); }
     .faq-list { display: flex; flex-direction: column; }
-    .faq-item { border-bottom: 1px solid var(--gray-200); }
-    .faq-item:first-child { border-top: 1px solid var(--gray-200); }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
     .faq-q {
       display: flex; align-items: flex-start; gap: 14px;
       padding: 20px 0; cursor: pointer; user-select: none;
     }
-    .faq-q-mark {
-      width: 30px; height: 30px; border-radius: var(--r-sm);
-      background: var(--green); color: #fff;
-      font-size: 12px; font-weight: 900;
+    .faq-qm {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--forest-pale); border: 1.5px solid var(--forest-light);
+      color: var(--forest); font-size: 11.5px; font-weight: 800;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
     }
-    .faq-q-text { flex: 1; font-size: 14.5px; font-weight: 700; padding-top: 3px; }
-    .faq-chevron { font-size: 16px; color: var(--gray-400); flex-shrink: 0; padding-top: 5px; transition: transform .3s; }
-    .faq-item.open .faq-chevron { transform: rotate(180deg); }
-    .faq-a { display: none; padding: 0 0 20px 44px; font-size: 13.5px; color: var(--gray-500); line-height: 1.9; }
+    .faq-qt { flex: 1; font-size: 14px; font-weight: 700; color: var(--text); padding-top: 3px; }
+    .faq-chev { font-size: 14px; color: var(--text-light); flex-shrink: 0; padding-top: 5px; transition: transform .3s; }
+    .faq-item.open .faq-chev { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 0 20px 42px; font-size: 13.5px; color: var(--text-mid); line-height: 1.9; }
     .faq-item.open .faq-a { display: block; }
 
-    /* ===== COMPANY ===== */
-    .company-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: start; }
+    /* ========== COMPANY ========== */
+    .company-sec { background: var(--cream); }
+    .co-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; }
     .co-table { width: 100%; border-collapse: collapse; }
-    .co-table tr { border-bottom: 1px solid var(--gray-200); }
+    .co-table tr { border-bottom: 1px solid var(--border); }
     .co-table td { padding: 15px 0; font-size: 13.5px; vertical-align: top; }
-    .co-table td:first-child { width: 130px; color: var(--gray-500); font-weight: 700; font-size: 12.5px; }
-    .co-card {
-      background: var(--green-pale); border-radius: var(--r-lg);
-      padding: 32px; border: 1px solid rgba(43,122,0,.1);
+    .co-table td:first-child { width: 130px; color: var(--text-light); font-size: 12px; font-weight: 600; }
+    .co-box {
+      background: var(--forest-pale); border-radius: var(--r-lg);
+      padding: 30px; border: 1px solid var(--beige);
     }
-    .co-card-title { font-size: 13.5px; font-weight: 800; color: var(--green-dark); margin-bottom: 16px; }
-    .co-channels { display: flex; flex-direction: column; gap: 10px; }
+    .co-box-title { font-size: 13px; font-weight: 700; color: var(--forest); margin-bottom: 14px; }
+    .co-ch-list { display: flex; flex-direction: column; gap: 9px; }
     .co-ch {
-      display: flex; align-items: center; gap: 10px;
-      background: #fff; padding: 13px 16px; border-radius: var(--r);
-      border: 1px solid var(--gray-200);
-      font-size: 13px; font-weight: 600; color: var(--gray-700);
+      display: flex; align-items: center; gap: 9px;
+      background: var(--white); padding: 12px 14px; border-radius: var(--r);
+      border: 1px solid var(--border); font-size: 13px; font-weight: 600; color: var(--text-mid);
       transition: border-color .2s;
     }
-    .co-ch:hover { border-color: var(--green-light); }
-    .co-ch-icon { font-size: 18px; }
+    .co-ch:hover { border-color: var(--forest-light); }
+    .co-ch-i { font-size: 17px; }
 
-    /* ===== CONTACT ===== */
-    .contact { background: var(--gray-50); }
+    /* ========== CONTACT ========== */
+    .contact-sec { background: var(--white); }
     .contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; }
-    .contact-info { padding-top: 4px; }
-    .contact-info-list { display: flex; flex-direction: column; gap: 22px; margin-top: 8px; }
-    .ci-item { display: flex; gap: 12px; }
-    .ci-icon {
-      width: 42px; height: 42px; border-radius: var(--r);
-      background: var(--green-pale); display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0;
+    .ci-list { display: flex; flex-direction: column; gap: 20px; margin-top: 8px; }
+    .ci-item { display: flex; gap: 12px; align-items: flex-start; }
+    .ci-ico {
+      width: 40px; height: 40px; border-radius: var(--r);
+      background: var(--forest-pale); display: flex; align-items: center; justify-content: center;
+      font-size: 17px; flex-shrink: 0;
     }
-    .ci-label { font-size: 10.5px; color: var(--gray-400); font-weight: 700; letter-spacing: .07em; margin-bottom: 2px; }
-    .ci-value { font-size: 13.5px; font-weight: 700; }
-    .contact-form { display: flex; flex-direction: column; gap: 16px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form-group { display: flex; flex-direction: column; gap: 5px; }
-    .form-label { font-size: 11.5px; font-weight: 700; color: var(--gray-700); letter-spacing: .04em; }
-    .form-req { color: var(--accent); margin-left: 2px; }
-    .form-input, .form-textarea {
-      padding: 11px 14px; border: 1.5px solid var(--gray-200);
+    .ci-lbl { font-size: 10px; color: var(--text-light); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
+    .ci-val { font-size: 13.5px; font-weight: 600; }
+    .contact-form { display: flex; flex-direction: column; gap: 15px; }
+    .form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-g { display: flex; flex-direction: column; gap: 5px; }
+    .form-lbl { font-size: 11px; font-weight: 700; color: var(--text); letter-spacing: .05em; }
+    .form-req { color: var(--brown); margin-left: 2px; }
+    .form-inp, .form-ta {
+      padding: 11px 14px; border: 1.5px solid var(--border);
       border-radius: var(--r); font-size: 13.5px; font-family: inherit;
-      background: #fff; color: var(--text);
+      background: var(--cream); color: var(--text);
       transition: border-color .2s, box-shadow .2s;
     }
-    .form-input:focus, .form-textarea:focus {
-      outline: none; border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(61,154,0,.1);
+    .form-inp:focus, .form-ta:focus {
+      outline: none; border-color: var(--forest-mid); background: #fff;
+      box-shadow: 0 0 0 3px rgba(58,100,40,.08);
     }
-    .form-textarea { min-height: 120px; resize: vertical; }
-    .btn-submit {
+    .form-ta { min-height: 120px; resize: vertical; }
+    .btn-send {
       display: flex; align-items: center; justify-content: center; gap: 7px;
-      background: var(--green); color: #fff; border: none; cursor: pointer;
-      padding: 15px; border-radius: var(--r);
-      font-size: 14.5px; font-weight: 700; font-family: inherit;
+      background: var(--forest); color: #fff; border: none; cursor: pointer;
+      padding: 14px; border-radius: var(--r);
+      font-size: 14px; font-weight: 700; font-family: inherit;
       transition: opacity .2s, transform .2s;
-      box-shadow: 0 4px 14px rgba(43,122,0,.3);
+      box-shadow: 0 4px 14px rgba(42,74,30,.3);
     }
-    .btn-submit:hover { opacity: .9; transform: translateY(-1px); }
+    .btn-send:hover { opacity: .9; transform: translateY(-1px); }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--green-dark); color: rgba(255,255,255,.65);
-      padding: 60px 24px 28px;
-    }
-    .footer-inner { max-width: 1160px; margin: 0 auto; }
-    .footer-grid {
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 40px; margin-bottom: 48px;
-    }
-    .footer-brand-logo {
+    /* ========== FOOTER ========== */
+    footer { background: #1a2a12; color: rgba(255,255,255,.55); padding: 60px 28px 28px; }
+    .foot-inner { max-width: 1160px; margin: 0 auto; }
+    .foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .foot-logo {
       display: flex; align-items: center; gap: 9px;
-      color: #fff; font-size: 15px; font-weight: 900; margin-bottom: 10px;
+      margin-bottom: 10px;
     }
-    .footer-brand-icon {
-      width: 32px; height: 32px; border-radius: 7px;
-      background: rgba(255,255,255,.15);
-      display: flex; align-items: center; justify-content: center; font-size: 16px;
+    .foot-logo-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; font-size: 15px;
     }
-    .footer-brand p { font-size: 12.5px; line-height: 1.9; max-width: 220px; }
-    .footer-socials { display: flex; gap: 8px; margin-top: 16px; }
-    .footer-social {
-      width: 34px; height: 34px; border-radius: 7px;
-      background: rgba(255,255,255,.1);
-      display: flex; align-items: center; justify-content: center; font-size: 14px;
+    .foot-logo-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14.5px; font-weight: 700; color: #fff;
+    }
+    .foot-brand p { font-size: 12px; line-height: 2; max-width: 220px; }
+    .foot-socials { display: flex; gap: 8px; margin-top: 16px; }
+    .foot-social {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,.09); display: flex; align-items: center; justify-content: center; font-size: 13px;
       transition: background .2s;
     }
-    .footer-social:hover { background: rgba(255,255,255,.2); }
-    .footer-col h4 { color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
-    .footer-col a { display: block; font-size: 12.5px; margin-bottom: 9px; transition: color .2s; }
-    .footer-col a:hover { color: #a3e635; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px;
+    .foot-social:hover { background: rgba(255,255,255,.18); }
+    .foot-col h4 { color: rgba(255,255,255,.45); font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; }
+    .foot-col a { display: block; font-size: 12.5px; margin-bottom: 9px; transition: color .2s; }
+    .foot-col a:hover { color: #c8e880; }
+    .foot-bottom {
+      border-top: 1px solid rgba(255,255,255,.08); padding-top: 22px;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
     }
-    .footer-copy { font-size: 11.5px; }
-    .footer-bottom-links { display: flex; gap: 18px; }
-    .footer-bottom-links a { font-size: 11.5px; transition: color .2s; }
-    .footer-bottom-links a:hover { color: rgba(255,255,255,.9); }
+    .foot-copy { font-size: 11px; }
+    .foot-links { display: flex; gap: 18px; }
+    .foot-links a { font-size: 11px; transition: color .2s; }
+    .foot-links a:hover { color: rgba(255,255,255,.9); }
 
-    /* ===== RESPONSIVE ===== */
+    /* ========== RESPONSIVE ========== */
     @media (max-width: 1024px) {
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .numbers-grid  { grid-template-columns: repeat(2,1fr); }
-      .footer-grid   { grid-template-columns: 1fr 1fr; }
-      .recipe-row2   { max-width: 100%; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .num-grid { grid-template-columns: repeat(2,1fr); }
+      .foot-grid { grid-template-columns: 1fr 1fr; }
+      .recipe-row2 { max-width: 100%; }
     }
     @media (max-width: 768px) {
       section { padding: 64px 16px; }
-      .header-nav, .header-actions { display: none; }
+      .h-nav, .h-actions { display: none; }
       .hamburger { display: flex; }
-      .header-wrap { padding: 0 16px; gap: 16px; }
+      .header-inner { padding: 0 16px; gap: 0; }
       .about-layout, .story-row, .story-row:nth-child(even),
-      .shop-layout, .company-layout, .contact-layout,
+      .shop-layout, .co-layout, .contact-layout,
       .news-layout { grid-template-columns: 1fr; direction: ltr; }
-      .story-body, .story-row:nth-child(even) .story-body { padding: 36px 24px; }
-      .services-grid, .products-grid, .recipe-grid { grid-template-columns: 1fr; }
+      .story-txt, .story-row:nth-child(even) .story-txt { padding: 36px 24px; }
+      .features-grid, .products-grid, .recipe-grid { grid-template-columns: 1fr; }
       .recipe-row2 { grid-template-columns: 1fr; max-width: 100%; }
-      .numbers-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid  { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-      .about-sub-img { display: none; }
-      .mission-bar-inner { flex-direction: column; gap: 12px; }
-      .mission-divider { display: none; }
-      .form-row { grid-template-columns: 1fr; }
-      .hero-stats { gap: 24px; }
-      .hero-stat { padding-right: 24px; }
+      .num-grid { grid-template-columns: 1fr 1fr; }
+      .foot-grid { grid-template-columns: 1fr; }
+      .foot-bottom { flex-direction: column; align-items: flex-start; }
+      .about-sub { display: none; }
+      .intro-band-inner { flex-direction: column; gap: 12px; text-align: center; }
+      .intro-band-sep { display: none; }
+      .form-row2 { grid-template-columns: 1fr; }
+      .hero-nums { gap: 20px; }
+      .hero-num { padding-right: 20px; margin-right: 20px; }
+      .tiktok-grid { grid-template-columns: repeat(2,1fr); }
+      .tiktok-grid .tt-card:last-child { display: none; }
     }
     @media (max-width: 480px) {
       section { padding: 52px 14px; }
       .hero-btns { flex-direction: column; }
-      .btn-hero, .btn-hero-line, .btn-hero-ghost { width: 100%; justify-content: center; }
+      .btn-hero-main, .btn-hero-line, .btn-hero-ghost { width: 100%; justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- =========== HEADER =========== -->
+<!-- ========== HEADER ========== -->
 <header id="header">
-  <div class="header-wrap">
+  <div class="header-inner">
     <a href="#" class="logo">
-      <div class="logo-icon">🧅</div>
-      <div class="logo-name">
+      <div class="logo-mark">🧅</div>
+      <div class="logo-text">
         株式会社清流農園
-        <small>SEIRYU NOEN Co., Ltd.</small>
+        <small>Seiryu Noen Co., Ltd.</small>
       </div>
     </a>
-    <nav class="header-nav">
+    <nav class="h-nav">
       <a href="#about">農園について</a>
       <a href="#story">ストーリー</a>
       <a href="#products">商品</a>
@@ -757,9 +815,9 @@
       <a href="#news">お知らせ</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
-    <div class="header-actions">
-      <a href="#line" class="btn-sm-line">📩 LINE登録</a>
-      <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="btn-sm-shop">🛒 ショップ</a>
+    <div class="h-actions">
+      <a href="#line" class="btn-h-line">📩 LINE登録</a>
+      <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="btn-h-shop">🛒 ショップ</a>
     </div>
     <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
       <span></span><span></span><span></span>
@@ -775,168 +833,150 @@
   <a href="#shop"     onclick="toggleMenu()">直売所</a>
   <a href="#news"     onclick="toggleMenu()">お知らせ</a>
   <a href="#contact"  onclick="toggleMenu()">お問い合わせ</a>
-  <a href="#line" onclick="toggleMenu()" class="btn-sm-line" style="padding:13px 32px;font-size:14px;">📩 LINE登録</a>
+  <a href="#line" onclick="toggleMenu()" class="btn-h-line" style="padding:12px 28px;font-size:13px;">📩 LINE登録</a>
 </div>
 
-<!-- =========== HERO =========== -->
+<!-- ========== HERO ========== -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-horizon">
+  <div class="hero-silhouette">
     <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:auto;">
-      <path d="M0,140 C240,100 480,160 720,130 C960,100 1200,150 1440,120 L1440,200 L0,200Z" fill="rgba(20,60,5,.5)"/>
-      <path d="M0,165 C360,140 720,175 1080,155 C1260,144 1380,165 1440,158 L1440,200 L0,200Z" fill="rgba(10,40,2,.6)"/>
+      <path d="M0,145 C200,112 420,168 680,138 C880,114 1100,162 1340,130 C1400,122 1430,128 1440,125 L1440,200 L0,200Z" fill="rgba(26,42,18,.48)"/>
+      <path d="M0,165 C320,148 640,178 960,160 C1120,150 1300,170 1440,162 L1440,200 L0,200Z" fill="rgba(16,30,10,.6)"/>
     </svg>
   </div>
   <div class="hero-content">
-    <div class="hero-tag">
-      <span class="hero-tag-dot"></span>
-      北海道 網走郡津別町
-    </div>
+    <div class="hero-eyebrow">Hokkaido Tsubetsu-cho · Since 2020</div>
     <h1>
-      大地の恵みを、<br>
-      <b>まっすぐ</b>食卓へ届ける。
+      大地の恵みを、<br>まっすぐ届ける。
+      <em>— 北海道津別町から食卓へ</em>
     </h1>
-    <p class="hero-lead">
-      北海道津別町の豊かな土壌で育てた玉ねぎを、<br>
-      収穫・選別・発送まで自社一貫管理でお届けします。
+    <p class="hero-tagline">
+      昼夜の寒暖差と清らかな水に育まれた津別の玉ねぎ。<br>
+      収穫から発送まで、すべてを自分たちの手で。
     </p>
     <div class="hero-btns">
-      <a href="#products"   class="btn-hero">🛒 商品を見る</a>
+      <a href="#products"   class="btn-hero-main">🛒 商品を見る</a>
       <a href="#line"       class="btn-hero-line">📩 LINE登録</a>
       <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="btn-hero-ghost">🎵 TikTok</a>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-num">北海道<span>産</span></div>
-        <div class="hero-stat-label">こだわりの産地</div>
+    <div class="hero-nums">
+      <div class="hero-num">
+        <div class="hero-num-val">北海道<span>産</span></div>
+        <div class="hero-num-label">津別町こだわり</div>
       </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">全国<span>発送</span></div>
-        <div class="hero-stat-label">産地直送</div>
+      <div class="hero-num">
+        <div class="hero-num-val">全国<span>発送</span></div>
+        <div class="hero-num-label">産地直送対応</div>
       </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">一貫<span>管理</span></div>
-        <div class="hero-stat-label">収穫〜発送まで</div>
+      <div class="hero-num">
+        <div class="hero-num-val">一貫<span>管理</span></div>
+        <div class="hero-num-label">収穫〜発送まで</div>
       </div>
     </div>
   </div>
-  <div class="scroll-arrow">SCROLL</div>
+  <div class="scroll-hint">SCROLL</div>
 </section>
 
-<!-- =========== MISSION BAR =========== -->
-<div class="mission-bar">
-  <div class="mission-bar-inner">
-    <div class="mission-text">「生産者と食卓をつなぐ」</div>
-    <div class="mission-divider"></div>
-    <div class="mission-sub">北海道の農業の恵みを、全国の皆様へ届けることが私たちの使命です。</div>
+<!-- ========== INTRO BAND ========== -->
+<div class="intro-band">
+  <div class="intro-band-inner">
+    <div class="intro-band-main">「生産者と食卓をつなぐ農業」</div>
+    <div class="intro-band-sep"></div>
+    <div class="intro-band-sub">北海道の豊かな自然の恵みを、全国の食卓へ届けることが清流農園の使命です。</div>
   </div>
 </div>
 
-<!-- =========== SERVICES =========== -->
-<section class="services" id="services">
+<!-- ========== FEATURES ========== -->
+<section class="features" id="features">
   <div class="inner">
-    <div class="eyebrow">Our Services</div>
-    <h2 class="sec-title">清流農園のサービス</h2>
-    <p class="sec-lead">産地直送・TikTok発信・直売所など、複数のチャネルで新鮮な野菜をお届けしています。</p>
-    <div class="services-grid">
-      <div class="svc-card">
-        <div class="svc-icon">📦</div>
-        <div class="svc-title">産地直送ショップ</div>
-        <div class="svc-desc">BASEショップ・TikTok Shopを通じて全国へ。収穫したての玉ねぎ・季節野菜を直接お届けします。</div>
-        <a href="#products" class="svc-link">商品を見る →</a>
+    <div class="eyebrow">Our Promise</div>
+    <h2 class="sec-title">清流農園の3つのこだわり</h2>
+    <p class="sec-lead">品質・鮮度・透明性——すべてにおいて妥協しない農業を実践しています。</p>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-num">POINT 01</div>
+        <div class="feat-icon">🌱</div>
+        <div class="feat-title">北海道津別町の大地で育てる</div>
+        <div class="feat-body">昼夜の寒暖差と肥沃な砂壌土が育む高品質な玉ねぎ。この土地でしか生まれない甘みと旨みがあります。</div>
       </div>
-      <div class="svc-card">
-        <div class="svc-icon">🏪</div>
-        <div class="svc-title">直売所</div>
-        <div class="svc-desc">北海道津別町の農園直売所では、その日に採れた野菜を直接購入できます。11:00〜17:00営業。</div>
-        <a href="#shop" class="svc-link">直売所情報を見る →</a>
+      <div class="feat-card">
+        <div class="feat-num">POINT 02</div>
+        <div class="feat-icon">📦</div>
+        <div class="feat-title">収穫から発送まで一貫管理</div>
+        <div class="feat-body">収穫・選別・梱包・発送を自社で完結。中間流通を省き、より新鮮な状態でお手元へお届けします。</div>
       </div>
-      <div class="svc-card">
-        <div class="svc-icon">🎵</div>
-        <div class="svc-title">TikTok農園ライブ</div>
-        <div class="svc-desc">農園の日常・収穫風景・ライブ配信を毎日更新。生産者の顔が見える"透明な農業"を実践しています。</div>
-        <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="svc-link">TikTokを見る →</a>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon">📩</div>
-        <div class="svc-title">LINE公式アカウント</div>
-        <div class="svc-desc">販売開始・直売所情報・イベント出店情報をLINEでいち早くお届け。友だち追加でお得な情報を受け取れます。</div>
-        <a href="#line" class="svc-link">LINE登録する →</a>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon">🤝</div>
-        <div class="svc-title">法人・まとめ買い</div>
-        <div class="svc-desc">飲食店・業者様向けのまとめ買いにも対応しています。ご要望に応じた規格・数量でご相談ください。</div>
-        <a href="#contact" class="svc-link">お問い合わせ →</a>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon">🌾</div>
-        <div class="svc-title">イベント出店</div>
-        <div class="svc-desc">各種イベント・マルシェに出店中。旬の野菜を手に取って確かめられる機会を積極的につくっています。</div>
-        <a href="#line" class="svc-link">出店情報をLINEで受け取る →</a>
+      <div class="feat-card">
+        <div class="feat-num">POINT 03</div>
+        <div class="feat-icon">📱</div>
+        <div class="feat-title">TikTokで農園の"今"を発信</div>
+        <div class="feat-body">栽培の様子・収穫・ライブを毎日発信。顔の見える農業で、消費者との信頼関係を育てています。</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =========== NUMBERS =========== -->
-<section class="numbers" id="numbers">
+<!-- ========== NUMBERS ========== -->
+<section class="numbers-sec" id="numbers">
   <div class="inner">
-    <div class="eyebrow" style="color:rgba(255,255,255,.6)">Numbers</div>
-    <h2 class="sec-title" style="color:#fff;margin-bottom:48px;">数字で見る清流農園</h2>
-    <div class="numbers-grid">
-      <div class="num-item">
-        <div class="num-value">100<span>%</span></div>
-        <div class="num-label">北海道津別町産こだわり</div>
+    <div class="numbers-header">
+      <div class="eyebrow">Numbers</div>
+      <h2 class="sec-title">数字で見る清流農園</h2>
+    </div>
+    <div class="num-grid">
+      <div class="num-box">
+        <div class="num-val">100<span>%</span></div>
+        <div class="num-label">北海道津別町産</div>
       </div>
-      <div class="num-item">
-        <div class="num-value">全国<span>発送</span></div>
-        <div class="num-label">産地直送対応エリア</div>
+      <div class="num-box">
+        <div class="num-val">全国<span>へ</span></div>
+        <div class="num-label">産地直送対応</div>
       </div>
-      <div class="num-item">
-        <div class="num-value">3<span>チャネル</span></div>
+      <div class="num-box">
+        <div class="num-val">3<span>チャネル</span></div>
         <div class="num-label">販売チャネル数</div>
       </div>
-      <div class="num-item">
-        <div class="num-value">一貫<span>管理</span></div>
-        <div class="num-label">収穫から発送まで自社対応</div>
+      <div class="num-box">
+        <div class="num-val">一貫<span>管理</span></div>
+        <div class="num-label">収穫から発送まで</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =========== ABOUT =========== -->
-<section id="about">
+<!-- ========== ABOUT ========== -->
+<section class="about" id="about">
   <div class="inner">
     <div class="about-layout">
       <div class="about-visual">
-        <div class="about-main-img">🧅</div>
-        <div class="about-sub-img">🌾</div>
+        <div class="about-main">🧅
+          <span class="about-badge">北海道 津別町産</span>
+        </div>
+        <div class="about-sub">🌾</div>
       </div>
       <div>
         <div class="eyebrow">About Us</div>
         <h2 class="sec-title">清流農園について</h2>
         <p class="about-body">
           株式会社清流農園は、北海道網走郡津別町で玉ねぎを中心に農産物を生産・販売する農業法人です。
-          清らかな水と肥沃な大地に恵まれた津別町で、自然の力を最大限に活かした栽培に取り組んでいます。
+          清らかな水と昼夜の寒暖差に恵まれたこの土地で、自然の力を最大限に活かした栽培に取り組んでいます。
           <br><br>
-          収穫から選別・梱包・発送まですべてを自社で一貫管理することで、
-          鮮度と品質を妥協なくお届けします。TikTokを通じて農園のリアルな日常を発信し、
-          消費者との信頼関係を大切にしています。
+          収穫から選別・梱包・発送までを自社一貫管理することで、鮮度と品質を妥協なくお届け。
+          TikTokを通じて農園のリアルな日常を発信し、消費者との信頼関係を大切にしています。
         </p>
         <div class="about-points">
           <div class="about-pt">
             <div class="about-pt-icon">🗾</div>
             <div>
               <div class="about-pt-title">北海道網走郡津別町</div>
-              <div class="about-pt-body">昼夜の寒暖差と清らかな水が育む、高品質な野菜の産地です。</div>
+              <div class="about-pt-body">昼夜の寒暖差と清らかな水が育む、高品質な野菜の産地。</div>
             </div>
           </div>
           <div class="about-pt">
             <div class="about-pt-icon">🔄</div>
             <div>
-              <div class="about-pt-title">収穫から発送まで一貫管理</div>
-              <div class="about-pt-body">中間流通を省き、より新鮮な状態で消費者へ直接お届けします。</div>
+              <div class="about-pt-title">自社一貫管理</div>
+              <div class="about-pt-body">収穫から発送まで自社で管理し、新鮮さを最優先でお届けします。</div>
             </div>
           </div>
           <div class="about-pt">
@@ -952,66 +992,57 @@
   </div>
 </section>
 
-<!-- =========== STORY =========== -->
+<!-- ========== STORY ========== -->
 <section class="story" id="story">
-  <div class="inner" style="margin-bottom:48px;">
+  <div class="inner" style="margin-bottom:52px;">
     <div class="eyebrow">Our Story</div>
     <h2 class="sec-title">清流農園の歩み</h2>
     <p class="sec-lead">北海道の大地に根を張り、農業と向き合い続けてきた清流農園の物語。</p>
   </div>
-  <div class="story-track">
+  <div class="story-rows">
     <div class="story-row">
-      <div class="story-visual sv1">
-        🌱
-        <span class="story-chapter-badge">BEGINNING</span>
-      </div>
-      <div class="story-body">
-        <div class="story-chapter">Chapter 01</div>
-        <h3 class="story-title">北海道の大地と向き合う</h3>
-        <p class="story-text">
+      <div class="story-vis s1">🌱<span class="story-vis-tag">Beginning</span></div>
+      <div class="story-txt">
+        <div class="story-ch">Chapter 01</div>
+        <h3 class="story-h">北海道の大地と向き合う</h3>
+        <p class="story-p">
           網走郡津別町——オホーツク海に近いこの地は、昼夜の寒暖差が大きく、清らかな水に恵まれた農業の宝庫です。
-          先人たちが切り拓いたこの土地で、私たちは玉ねぎ栽培を通じて農業の本質を学び続けています。
+          先人たちが切り拓いたこの土地で、玉ねぎ栽培を通じて農業の本質を学び続けています。
           砂壌土のなめらかな土に種を蒔く瞬間、毎年新しい農業が始まります。
         </p>
-        <div class="story-quote">「この土地でしか育たない味がある。津別の玉ねぎを全国へ届けたい」</div>
+        <div class="story-q">「この土地でしか育たない味がある。津別の玉ねぎを全国へ届けたい」</div>
       </div>
     </div>
     <div class="story-row">
-      <div class="story-visual sv2">
-        🧅
-        <span class="story-chapter-badge">CULTIVATION</span>
-      </div>
-      <div class="story-body">
-        <div class="story-chapter">Chapter 02</div>
-        <h3 class="story-title">こだわりの一貫管理</h3>
-        <p class="story-text">
-          春の播種から秋の収穫まで、すべての工程を自社で管理しています。選別・梱包・発送も例外ではありません。
-          中間業者を介さないことで、収穫したばかりの新鮮な玉ねぎをそのままお客様の手元へ届けられます。
-          品質への妥協なきこだわりが、清流農園の原点です。
+      <div class="story-vis s2">🧅<span class="story-vis-tag">Cultivation</span></div>
+      <div class="story-txt">
+        <div class="story-ch">Chapter 02</div>
+        <h3 class="story-h">こだわりの一貫管理</h3>
+        <p class="story-p">
+          春の播種から秋の収穫まで、すべての工程を自社で管理しています。
+          選別・梱包・発送も例外ではありません。中間業者を介さないことで、
+          収穫したばかりの新鮮な玉ねぎをそのままお客様の手元へ届けられます。
         </p>
-        <div class="story-quote">「手をかけた分だけ、野菜は応えてくれる。一つひとつに愛情を込める」</div>
+        <div class="story-q">「手をかけた分だけ、野菜は応えてくれる。一つひとつに愛情を込める」</div>
       </div>
     </div>
     <div class="story-row">
-      <div class="story-visual sv3">
-        📱
-        <span class="story-chapter-badge">FUTURE</span>
-      </div>
-      <div class="story-body">
-        <div class="story-chapter">Chapter 03</div>
-        <h3 class="story-title">TikTokで農業の未来をひらく</h3>
-        <p class="story-text">
+      <div class="story-vis s3">📱<span class="story-vis-tag">Future</span></div>
+      <div class="story-txt">
+        <div class="story-ch">Chapter 03</div>
+        <h3 class="story-h">TikTokで農業の未来をひらく</h3>
+        <p class="story-p">
           「農家の日常を、もっとリアルに伝えたい」——その想いからTikTokでの発信を始めました。
           収穫の喜び、作業の大変さ、北海道の美しい風景。画面を通じて農業の魅力を届けることで、
-          消費者との距離が縮まっていきました。清流農園はこれからも農業の"今"を発信し続けます。
+          消費者との距離が縮まっていきました。
         </p>
-        <div class="story-quote">「農家と食卓をつなぐ。TikTokはその架け橋になれると信じています」</div>
+        <div class="story-q">「農家と食卓をつなぐ。TikTokはその架け橋になれると信じています」</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =========== PRODUCTS =========== -->
+<!-- ========== PRODUCTS ========== -->
 <section class="products" id="products">
   <div class="inner">
     <div class="eyebrow">Products</div>
@@ -1019,62 +1050,51 @@
     <p class="sec-lead">津別町の大地が育てた野菜を、産地直送でお届けします。</p>
     <div class="products-grid">
       <div class="prod-card">
-        <div class="prod-visual v1">
-          🧅
-          <span class="prod-badge on-sale">販売中</span>
-        </div>
+        <div class="prod-img v1">🧅<span class="prod-sticker on">販売中</span></div>
         <div class="prod-body">
-          <div class="prod-cat">Onion</div>
+          <div class="prod-en">Onion</div>
           <div class="prod-name">北海道産 玉ねぎ</div>
           <div class="prod-desc">津別町の豊かな土壌で丁寧に育てた玉ねぎ。甘みが強く炒め物・スープ・サラダに最適。家庭用から贈答用まで対応します。</div>
           <div class="prod-tags">
-            <span class="chip chip-g">北海道産</span>
-            <span class="chip chip-o">家庭用</span>
-            <span class="chip chip-o">贈答用</span>
+            <span class="tag tag-g">北海道産</span>
+            <span class="tag tag-b">家庭用</span>
+            <span class="tag tag-b">贈答用</span>
           </div>
           <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="btn-buy">📦 BASEで購入する</a>
         </div>
       </div>
       <div class="prod-card">
-        <div class="prod-visual v2">
-          🥬
-          <span class="prod-badge seasonal">季節限定</span>
-        </div>
+        <div class="prod-img v2">🥬<span class="prod-sticker sea">季節限定</span></div>
         <div class="prod-body">
-          <div class="prod-cat">Vegetables</div>
+          <div class="prod-en">Vegetables</div>
           <div class="prod-name">季節の野菜</div>
           <div class="prod-desc">その季節に収穫した新鮮な野菜をお届け。北海道の厳しい自然が生む、旨みたっぷりの旬の味をそのままに。</div>
           <div class="prod-tags">
-            <span class="chip chip-g">季節限定</span>
-            <span class="chip chip-g">旬の味</span>
+            <span class="tag tag-g">季節限定</span>
+            <span class="tag tag-g">旬の味</span>
           </div>
           <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="btn-buy">📦 BASEで購入する</a>
         </div>
       </div>
       <div class="prod-card">
-        <div class="prod-visual v3">
-          🍯
-          <span class="prod-badge coming">準備中</span>
-        </div>
+        <div class="prod-img v3">🍯<span class="prod-sticker soon">準備中</span></div>
         <div class="prod-body">
-          <div class="prod-cat">Processed</div>
+          <div class="prod-en">Processed</div>
           <div class="prod-name">加工品</div>
-          <div class="prod-desc">農園の野菜を使ったオリジナル加工品を鋭意開発中です。野菜の美味しさを新しい形でお届けします。</div>
-          <div class="prod-tags">
-            <span class="chip chip-x">開発中</span>
-          </div>
-          <span class="btn-buy disabled">近日公開予定</span>
+          <div class="prod-desc">農園の野菜を使ったオリジナル加工品を鋭意開発中。野菜の美味しさを新しい形でお届けします。</div>
+          <div class="prod-tags"><span class="tag tag-x">開発中</span></div>
+          <span class="btn-buy off">近日公開予定</span>
         </div>
       </div>
     </div>
-    <div class="products-more">
-      <a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener" class="btn-outline">🛒 TikTok Shopで購入する</a>
-      <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="btn-outline">📦 BASEショップへ</a>
+    <div class="products-cta">
+      <a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener" class="btn-outline-f">🛒 TikTok Shop</a>
+      <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="btn-outline-f">📦 BASEショップ</a>
     </div>
   </div>
 </section>
 
-<!-- =========== RECIPE =========== -->
+<!-- ========== RECIPE ========== -->
 <section class="recipe" id="recipe">
   <div class="inner">
     <div class="eyebrow">Recipe</div>
@@ -1082,82 +1102,82 @@
     <p class="sec-lead">甘みと旨みが詰まった津別産玉ねぎの美味しさを、シンプルなレシピでお楽しみください。</p>
     <div class="recipe-grid">
       <div class="rec-card">
-        <div class="rec-visual rv1">🍲<span class="rec-diff">★☆☆</span></div>
+        <div class="rec-img r1">🍲<span class="rec-diff">★☆☆</span></div>
         <div class="rec-body">
-          <div class="rec-meta">⏱ 約10分</div>
+          <div class="rec-time">⏱ 約10分</div>
           <div class="rec-name">まるごと玉ねぎスープ</div>
           <div class="rec-desc">玉ねぎの甘みがじんわり溶け出す、体が温まるシンプルスープ。</div>
           <div class="rec-steps">
-            <div class="rec-step"><span class="rec-step-n">1</span>玉ねぎに十字の切り込みを入れる</div>
-            <div class="rec-step"><span class="rec-step-n">2</span>コンソメスープで15分煮込む</div>
-            <div class="rec-step"><span class="rec-step-n">3</span>塩・胡椒、パセリを散らして完成</div>
+            <div class="rec-step"><span class="rec-n">1</span>玉ねぎに十字の切り込みを入れる</div>
+            <div class="rec-step"><span class="rec-n">2</span>コンソメスープで15分煮込む</div>
+            <div class="rec-step"><span class="rec-n">3</span>塩・胡椒、パセリを散らして完成</div>
           </div>
         </div>
       </div>
       <div class="rec-card">
-        <div class="rec-visual rv2">🥗<span class="rec-diff">★☆☆</span></div>
+        <div class="rec-img r2">🥗<span class="rec-diff">★☆☆</span></div>
         <div class="rec-body">
-          <div class="rec-meta">⏱ 約5分</div>
+          <div class="rec-time">⏱ 約5分</div>
           <div class="rec-name">新玉ねぎのスライスサラダ</div>
           <div class="rec-desc">みずみずしい新玉ねぎをスライスして、ポン酢とかつお節で。</div>
           <div class="rec-steps">
-            <div class="rec-step"><span class="rec-step-n">1</span>薄切りにして水に5分さらす</div>
-            <div class="rec-step"><span class="rec-step-n">2</span>水気を切って器に盛る</div>
-            <div class="rec-step"><span class="rec-step-n">3</span>ポン酢・かつお節・ごま油をかける</div>
+            <div class="rec-step"><span class="rec-n">1</span>薄切りにして水に5分さらす</div>
+            <div class="rec-step"><span class="rec-n">2</span>水気を切って器に盛る</div>
+            <div class="rec-step"><span class="rec-n">3</span>ポン酢・かつお節・ごま油をかける</div>
           </div>
         </div>
       </div>
       <div class="rec-card">
-        <div class="rec-visual rv3">🍳<span class="rec-diff">★★☆</span></div>
+        <div class="rec-img r3">🍳<span class="rec-diff">★★☆</span></div>
         <div class="rec-body">
-          <div class="rec-meta">⏱ 約20分</div>
+          <div class="rec-time">⏱ 約20分</div>
           <div class="rec-name">飴色玉ねぎのパスタ</div>
           <div class="rec-desc">じっくり炒めて飴色にした玉ねぎがソースになる絶品パスタ。</div>
           <div class="rec-steps">
-            <div class="rec-step"><span class="rec-step-n">1</span>バターで弱火15分、飴色に炒める</div>
-            <div class="rec-step"><span class="rec-step-n">2</span>ゆでたパスタと和え醤油・塩で味付け</div>
-            <div class="rec-step"><span class="rec-step-n">3</span>黒胡椒をたっぷり振って完成</div>
+            <div class="rec-step"><span class="rec-n">1</span>バターで弱火15分、飴色に炒める</div>
+            <div class="rec-step"><span class="rec-n">2</span>ゆでたパスタと和え醤油・塩で味付け</div>
+            <div class="rec-step"><span class="rec-n">3</span>黒胡椒をたっぷり振って完成</div>
           </div>
         </div>
       </div>
     </div>
     <div class="recipe-row2">
       <div class="rec-card">
-        <div class="rec-visual rv4">🌸<span class="rec-diff">★★☆</span></div>
+        <div class="rec-img r4">🌸<span class="rec-diff">★★☆</span></div>
         <div class="rec-body">
-          <div class="rec-meta">⏱ 約30分</div>
+          <div class="rec-time">⏱ 約30分</div>
           <div class="rec-name">オニオンブロッサム</div>
-          <div class="rec-desc">花のように開いた揚げ玉ねぎ。外サクサク・中とろ甘。大玉が最適。</div>
+          <div class="rec-desc">花のように開いた揚げ玉ねぎ。外サクサク、中とろ甘。大玉が最適。</div>
           <div class="rec-steps">
-            <div class="rec-step"><span class="rec-step-n">1</span>根元を残し16等分の切り込みで花形に</div>
-            <div class="rec-step"><span class="rec-step-n">2</span>小麦粉→卵→パン粉で180℃4〜5分揚げる</div>
-            <div class="rec-step"><span class="rec-step-n">3</span>マヨ＋ケチャップのディップを添えて完成</div>
+            <div class="rec-step"><span class="rec-n">1</span>根元を残し16等分に切り込みを入れ花形に</div>
+            <div class="rec-step"><span class="rec-n">2</span>小麦粉→卵→パン粉で180℃4〜5分揚げる</div>
+            <div class="rec-step"><span class="rec-n">3</span>マヨ＋ケチャップのディップを添えて完成</div>
           </div>
         </div>
       </div>
       <div class="rec-card">
-        <div class="rec-visual rv5">🧀<span class="rec-diff">★★☆</span></div>
+        <div class="rec-img r5">🧀<span class="rec-diff">★★☆</span></div>
         <div class="rec-body">
-          <div class="rec-meta">⏱ 約40分</div>
+          <div class="rec-time">⏱ 約40分</div>
           <div class="rec-name">オニオングラタンスープ</div>
           <div class="rec-desc">飴色玉ねぎの甘みとチーズの香ばしさが絶品のフランス定番スープ。</div>
           <div class="rec-steps">
-            <div class="rec-step"><span class="rec-step-n">1</span>バターで弱火20分、きつね色に炒める</div>
-            <div class="rec-step"><span class="rec-step-n">2</span>コンソメで煮込み耐熱容器にバゲット乗せ</div>
-            <div class="rec-step"><span class="rec-step-n">3</span>グリュイエールを乗せ230℃で5〜7分焼く</div>
+            <div class="rec-step"><span class="rec-n">1</span>バターで弱火20分きつね色に炒める</div>
+            <div class="rec-step"><span class="rec-n">2</span>コンソメで煮込みバゲットを乗せる</div>
+            <div class="rec-step"><span class="rec-n">3</span>チーズを乗せ230℃で5〜7分焼く</div>
           </div>
         </div>
       </div>
     </div>
     <div class="recipe-cta">
-      <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="btn-outline">🎵 TikTokでレシピ動画を見る</a>
+      <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="btn-outline-f">🎵 TikTokでレシピ動画を見る</a>
       <div class="recipe-note">農園直送の玉ねぎで、ぜひお試しください</div>
     </div>
   </div>
 </section>
 
-<!-- =========== NEWS =========== -->
-<section id="news">
+<!-- ========== NEWS ========== -->
+<section class="news" id="news">
   <div class="inner">
     <div class="news-layout">
       <div>
@@ -1166,47 +1186,39 @@
         <div class="news-list">
           <div class="news-item">
             <div class="news-date">2026.06.12</div>
-            <span class="news-badge nb-info">お知らせ</span>
+            <span class="news-tag-badge nb-i">お知らせ</span>
             <div class="news-text">ホームページをリニューアルしました。</div>
           </div>
           <div class="news-item">
             <div class="news-date">2026.06.12</div>
-            <span class="news-badge nb-sale">販売</span>
+            <span class="news-tag-badge nb-s">販売</span>
             <div class="news-text">LINE公式アカウントを開設しました。友だち追加よろしくお願いします。</div>
           </div>
           <div class="news-item">
             <div class="news-date">2026.06.12</div>
-            <span class="news-badge nb-sns">SNS</span>
+            <span class="news-tag-badge nb-sn">SNS</span>
             <div class="news-text">TikTok Shop・BASEショップにて玉ねぎ販売中です。</div>
           </div>
         </div>
       </div>
       <div>
-        <div class="sidebar-box">
-          <div class="sidebar-title">🛒 購入する</div>
-          <div class="sidebar-links">
-            <a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener" class="sidebar-link">
-              <span>🛒</span> TikTok Shop
-            </a>
-            <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="sidebar-link">
-              <span>📦</span> BASEショップ
-            </a>
+        <div class="side-box">
+          <div class="side-title">🛒 購入する</div>
+          <div class="side-links">
+            <a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener" class="side-link"><span>🛒</span> TikTok Shop</a>
+            <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="side-link"><span>📦</span> BASEショップ</a>
           </div>
         </div>
-        <div class="sidebar-box">
-          <div class="sidebar-title">📱 SNS・公式</div>
-          <div class="sidebar-links">
-            <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="sidebar-link">
-              <span>🎵</span> TikTok @kitanokoropo
-            </a>
-            <a href="#line" class="sidebar-link">
-              <span>📩</span> LINE公式アカウント
-            </a>
+        <div class="side-box">
+          <div class="side-title">📱 SNS・公式</div>
+          <div class="side-links">
+            <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="side-link"><span>🎵</span> TikTok @kitanokoropo</a>
+            <a href="#line" class="side-link"><span>📩</span> LINE公式アカウント</a>
           </div>
         </div>
-        <div class="sidebar-box">
-          <div class="sidebar-title">🏪 直売所</div>
-          <p style="font-size:12.5px;color:var(--gray-500);line-height:1.9;">
+        <div class="side-box">
+          <div class="side-title">🏪 直売所</div>
+          <p style="font-size:12px;color:var(--text-mid);line-height:2;">
             📍 北海道網走郡津別町最上291<br>
             🕐 11:00〜17:00<br>
             📅 出店情報はSNS・LINEで告知
@@ -1217,159 +1229,134 @@
   </div>
 </section>
 
-<!-- =========== SHOP =========== -->
-<section class="shop" id="shop">
+<!-- ========== SHOP ========== -->
+<section class="shop-sec" id="shop">
   <div class="inner">
     <div class="shop-layout">
       <div>
         <div class="eyebrow">Direct Shop</div>
         <h2 class="sec-title">直売所情報</h2>
         <div class="shop-info-list">
-          <div class="shop-info">
+          <div class="shop-info-row">
             <div class="shop-info-icon">🕐</div>
             <div>
-              <div class="shop-info-label">OPEN</div>
-              <div class="shop-info-value">11:00 〜 17:00</div>
-              <div class="shop-info-note">営業日はSNS・LINEでご確認ください</div>
+              <div class="shop-lbl">Open</div>
+              <div class="shop-val">11:00 〜 17:00</div>
+              <div class="shop-note">営業日はSNS・LINEでご確認ください</div>
             </div>
           </div>
-          <div class="shop-info">
+          <div class="shop-info-row">
             <div class="shop-info-icon">📍</div>
             <div>
-              <div class="shop-info-label">ADDRESS</div>
-              <div class="shop-info-value">北海道網走郡津別町最上291番地</div>
+              <div class="shop-lbl">Address</div>
+              <div class="shop-val">北海道網走郡津別町最上291番地</div>
             </div>
           </div>
-          <div class="shop-info">
+          <div class="shop-info-row">
             <div class="shop-info-icon">🧅</div>
             <div>
-              <div class="shop-info-label">PRODUCTS</div>
-              <div class="shop-info-value">玉ねぎ・季節野菜・加工品（予定）</div>
+              <div class="shop-lbl">Products</div>
+              <div class="shop-val">玉ねぎ・季節野菜・加工品（予定）</div>
             </div>
           </div>
-          <div class="shop-info">
+          <div class="shop-info-row">
             <div class="shop-info-icon">📅</div>
             <div>
-              <div class="shop-info-label">EVENTS</div>
-              <div class="shop-info-value">各種イベントに出店中</div>
-              <div class="shop-info-note">最新情報はSNS・LINEで告知</div>
+              <div class="shop-lbl">Events</div>
+              <div class="shop-val">各種イベントに出店中</div>
+              <div class="shop-note">最新情報はSNS・LINEで告知</div>
             </div>
           </div>
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="https://maps.app.goo.gl/miCsWeoq8X68nEB1A" target="_blank" rel="noopener" class="btn-map">📍 Googleマップで開く</a>
-          <a href="#line" class="btn-ghost-white">📩 LINEで最新情報</a>
+          <a href="https://maps.app.goo.gl/miCsWeoq8X68nEB1A" target="_blank" rel="noopener" class="btn-map-w">📍 Googleマップで開く</a>
+          <a href="#line" class="btn-ghost-w">📩 LINEで最新情報</a>
         </div>
       </div>
       <div class="shop-map">
         🗺️
-        <a href="https://maps.app.goo.gl/miCsWeoq8X68nEB1A" target="_blank" rel="noopener" class="btn-map">📍 地図を開く</a>
+        <a href="https://maps.app.goo.gl/miCsWeoq8X68nEB1A" target="_blank" rel="noopener" class="btn-map-w">📍 地図を開く</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =========== LINE CTA =========== -->
-<section class="line-cta" id="line">
+<!-- ========== LINE CTA ========== -->
+<section class="line-cta-sec" id="line">
   <div class="inner-mid" style="position:relative;z-index:1;">
     <div class="eyebrow">LINE Official</div>
-    <h2 class="sec-title" style="margin-bottom:36px;">LINE公式アカウントを<br>友だち追加してください</h2>
+    <h2 class="sec-title" style="margin-bottom:32px;">LINE公式アカウントを<br>友だち追加してください</h2>
     <div class="line-benefits">
-      <div class="line-benefit">
-        <div class="line-benefit-icon">🔔</div>
-        <div class="line-benefit-label">販売開始通知</div>
-      </div>
-      <div class="line-benefit">
-        <div class="line-benefit-icon">🏪</div>
-        <div class="line-benefit-label">直売所情報</div>
-      </div>
-      <div class="line-benefit">
-        <div class="line-benefit-icon">📅</div>
-        <div class="line-benefit-label">イベント情報</div>
-      </div>
-      <div class="line-benefit">
-        <div class="line-benefit-icon">🌾</div>
-        <div class="line-benefit-label">収穫情報</div>
-      </div>
+      <div class="line-benefit"><div class="line-benefit-icon">🔔</div><div class="line-benefit-label">販売開始通知</div></div>
+      <div class="line-benefit"><div class="line-benefit-icon">🏪</div><div class="line-benefit-label">直売所情報</div></div>
+      <div class="line-benefit"><div class="line-benefit-icon">📅</div><div class="line-benefit-label">イベント情報</div></div>
+      <div class="line-benefit"><div class="line-benefit-icon">🌾</div><div class="line-benefit-label">収穫情報</div></div>
     </div>
-    <a href="https://lin.ee/" class="btn-line-main">📩 友だち追加する</a>
+    <a href="https://lin.ee/" class="btn-line-big">📩 友だち追加する</a>
     <div class="line-note">QRコードはLINE公式アカウント設定後に掲載します</div>
   </div>
 </section>
 
-<!-- =========== TikTok =========== -->
-<section style="background:#0a0a0a;padding:80px 24px;" id="tiktok">
+<!-- ========== TIKTOK ========== -->
+<section class="tiktok-sec" id="tiktok">
   <div class="inner">
-    <div class="eyebrow" style="color:#69c9d0;">TikTok</div>
-    <h2 class="sec-title" style="color:#fff;margin-bottom:12px;">農園の日常を毎日配信中</h2>
-    <p style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:48px;">収穫風景・農作業・ライブ配信をリアルタイムで発信しています。</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:32px;" id="tiktokGrid">
-      <div style="aspect-ratio:9/16;border-radius:16px;background:linear-gradient(180deg,#0d3b0d,#1e5c1e);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:16px;position:relative;">
-        <span style="font-size:48px;position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);">🌾</span>
-        <span style="background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:40px;">収穫風景</span>
-      </div>
-      <div style="aspect-ratio:9/16;border-radius:16px;background:linear-gradient(180deg,#3b1e00,#6b3800);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:16px;position:relative;">
-        <span style="font-size:48px;position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);">🧅</span>
-        <span style="background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:40px;">農園の日常</span>
-      </div>
-      <div style="aspect-ratio:9/16;border-radius:16px;background:linear-gradient(180deg,#0d1b3b,#1e3566);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:16px;position:relative;">
-        <span style="font-size:48px;position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);">📱</span>
-        <span style="background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:40px;">ライブ配信</span>
-      </div>
+    <div class="eyebrow">TikTok</div>
+    <h2 class="sec-title">農園の日常を毎日配信中</h2>
+    <p class="sec-lead">収穫風景・農作業・ライブ配信をリアルタイムで発信しています。</p>
+    <div class="tiktok-grid" id="ttGrid">
+      <div class="tt-card c1"><span class="tt-emoji">🌾</span><span class="tt-label">収穫風景</span></div>
+      <div class="tt-card c2"><span class="tt-emoji">🧅</span><span class="tt-label">農園の日常</span></div>
+      <div class="tt-card c3"><span class="tt-emoji">📱</span><span class="tt-label">ライブ配信</span></div>
     </div>
-    <div style="text-align:center;">
-      <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:9px;background:#fff;color:#000;padding:14px 32px;border-radius:40px;font-size:14px;font-weight:700;transition:transform .2s;"
-         onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-        🎵 TikTokをフォローする
-      </a>
+    <div class="tiktok-cta">
+      <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="btn-tt">🎵 TikTokをフォローする</a>
     </div>
   </div>
 </section>
 
-<!-- =========== FAQ =========== -->
-<section class="faq" id="faq">
+<!-- ========== FAQ ========== -->
+<section class="faq-sec" id="faq">
   <div class="inner-mid">
     <div class="eyebrow">FAQ</div>
     <h2 class="sec-title">よくある質問</h2>
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">発送はいつになりますか？</div>
-          <div class="faq-chevron">▾</div>
+          <div class="faq-qm">Q</div>
+          <div class="faq-qt">発送はいつになりますか？</div>
+          <div class="faq-chev">▾</div>
         </div>
         <div class="faq-a">ご注文後、順次発送いたします。詳細はBASEショップの各商品ページをご確認ください。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">玉ねぎの保存方法を教えてください。</div>
-          <div class="faq-chevron">▾</div>
+          <div class="faq-qm">Q</div>
+          <div class="faq-qt">玉ねぎの保存方法を教えてください。</div>
+          <div class="faq-chev">▾</div>
         </div>
         <div class="faq-a">ネットに入れて風通しの良い冷暗所で保存してください。気温が高い時期は冷蔵庫保存もおすすめです。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">サイズは選べますか？</div>
-          <div class="faq-chevron">▾</div>
+          <div class="faq-qm">Q</div>
+          <div class="faq-qt">サイズは選べますか？</div>
+          <div class="faq-chev">▾</div>
         </div>
         <div class="faq-a">商品により対応が異なります。BASEショップの各商品ページをご確認ください。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">沖縄・離島への発送はできますか？</div>
-          <div class="faq-chevron">▾</div>
+          <div class="faq-qm">Q</div>
+          <div class="faq-qt">沖縄・離島への発送はできますか？</div>
+          <div class="faq-chev">▾</div>
         </div>
         <div class="faq-a">発送可能ですが、追加送料が発生する場合があります。ご注文前にお問い合わせください。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">法人・まとめ買いの相談はできますか？</div>
-          <div class="faq-chevron">▾</div>
+          <div class="faq-qm">Q</div>
+          <div class="faq-qt">法人・まとめ買いの相談はできますか？</div>
+          <div class="faq-chev">▾</div>
         </div>
         <div class="faq-a">はい、対応しております。下記のお問い合わせフォームよりご相談ください。</div>
       </div>
@@ -1377,28 +1364,28 @@
   </div>
 </section>
 
-<!-- =========== COMPANY =========== -->
-<section id="company">
+<!-- ========== COMPANY ========== -->
+<section class="company-sec" id="company">
   <div class="inner">
     <div class="eyebrow">Company</div>
     <h2 class="sec-title">会社概要</h2>
-    <div class="company-layout">
+    <div class="co-layout">
       <div>
         <table class="co-table">
           <tr><td>会社名</td><td>株式会社清流農園</td></tr>
           <tr><td>所在地</td><td>北海道網走郡津別町最上291番地</td></tr>
           <tr><td>事業内容</td><td>農産物生産・販売</td></tr>
           <tr><td>販売チャネル</td><td>直売所 / TikTok Shop / BASEショップ</td></tr>
-          <tr><td>SNS</td><td><a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;">TikTok @kitanokoropo</a></td></tr>
+          <tr><td>SNS</td><td><a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" style="color:var(--forest-mid);font-weight:700;">TikTok @kitanokoropo</a></td></tr>
         </table>
       </div>
       <div>
-        <div class="co-card">
-          <div class="co-card-title">🛒 販売チャネル</div>
-          <div class="co-channels">
-            <a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener" class="co-ch"><span class="co-ch-icon">🛒</span> TikTok Shop</a>
-            <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="co-ch"><span class="co-ch-icon">📦</span> BASEショップ</a>
-            <div class="co-ch"><span class="co-ch-icon">🏪</span> 直売所（北海道津別町）</div>
+        <div class="co-box">
+          <div class="co-box-title">🛒 販売チャネル</div>
+          <div class="co-ch-list">
+            <a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener" class="co-ch"><span class="co-ch-i">🛒</span> TikTok Shop</a>
+            <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="co-ch"><span class="co-ch-i">📦</span> BASEショップ</a>
+            <div class="co-ch"><span class="co-ch-i">🏪</span> 直売所（北海道津別町）</div>
           </div>
         </div>
       </div>
@@ -1406,83 +1393,74 @@
   </div>
 </section>
 
-<!-- =========== CONTACT =========== -->
-<section class="contact" id="contact">
+<!-- ========== CONTACT ========== -->
+<section class="contact-sec" id="contact">
   <div class="inner">
     <div class="contact-layout">
-      <div class="contact-info">
+      <div>
         <div class="eyebrow">Contact</div>
         <h2 class="sec-title">お問い合わせ</h2>
-        <p style="font-size:13.5px;color:var(--gray-500);line-height:1.9;margin-bottom:28px;">
+        <p style="font-size:13.5px;color:var(--text-mid);line-height:2;margin-bottom:28px;">
           ご質問・法人取引・メディア掲載などお気軽にお問い合わせください。
         </p>
-        <div class="contact-info-list">
+        <div class="ci-list">
           <div class="ci-item">
-            <div class="ci-icon">📍</div>
-            <div>
-              <div class="ci-label">ADDRESS</div>
-              <div class="ci-value">北海道網走郡津別町最上291番地</div>
-            </div>
+            <div class="ci-ico">📍</div>
+            <div><div class="ci-lbl">Address</div><div class="ci-val">北海道網走郡津別町最上291番地</div></div>
           </div>
           <div class="ci-item">
-            <div class="ci-icon">📩</div>
-            <div>
-              <div class="ci-label">LINE</div>
-              <div class="ci-value">LINE公式アカウントから</div>
-            </div>
+            <div class="ci-ico">📩</div>
+            <div><div class="ci-lbl">LINE</div><div class="ci-val">LINE公式アカウントから</div></div>
           </div>
           <div class="ci-item">
-            <div class="ci-icon">🎵</div>
-            <div>
-              <div class="ci-label">TikTok DM</div>
-              <div class="ci-value">@kitanokoropo</div>
-            </div>
+            <div class="ci-ico">🎵</div>
+            <div><div class="ci-lbl">TikTok DM</div><div class="ci-val">@kitanokoropo</div></div>
           </div>
         </div>
       </div>
       <form class="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">お名前<span class="form-req">*</span></label>
-            <input type="text" class="form-input" placeholder="山田 太郎" required />
+        <div class="form-row2">
+          <div class="form-g">
+            <label class="form-lbl">お名前<span class="form-req">*</span></label>
+            <input type="text" class="form-inp" placeholder="山田 太郎" required />
           </div>
-          <div class="form-group">
-            <label class="form-label">電話番号</label>
-            <input type="tel" class="form-input" placeholder="090-0000-0000" />
+          <div class="form-g">
+            <label class="form-lbl">電話番号</label>
+            <input type="tel" class="form-inp" placeholder="090-0000-0000" />
           </div>
         </div>
-        <div class="form-group">
-          <label class="form-label">メールアドレス<span class="form-req">*</span></label>
-          <input type="email" class="form-input" placeholder="example@email.com" required />
+        <div class="form-g">
+          <label class="form-lbl">メールアドレス<span class="form-req">*</span></label>
+          <input type="email" class="form-inp" placeholder="example@email.com" required />
         </div>
-        <div class="form-group">
-          <label class="form-label">お問い合わせ内容<span class="form-req">*</span></label>
-          <textarea class="form-textarea" placeholder="ご質問・ご要望をご記入ください" required></textarea>
+        <div class="form-g">
+          <label class="form-lbl">お問い合わせ内容<span class="form-req">*</span></label>
+          <textarea class="form-ta" placeholder="ご質問・ご要望をご記入ください" required></textarea>
         </div>
-        <button type="submit" class="btn-submit">送信する →</button>
+        <button type="submit" class="btn-send">送信する →</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- =========== FOOTER =========== -->
+<!-- ========== FOOTER ========== -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-logo">
-          <div class="footer-brand-icon">🧅</div>
-          株式会社清流農園
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <div class="foot-logo-icon">🧅</div>
+          <div class="foot-logo-name">株式会社清流農園</div>
         </div>
         <p>北海道網走郡津別町から、新鮮な野菜を全国のご家庭へ産地直送でお届けしています。</p>
-        <div class="footer-socials">
-          <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="footer-social" title="TikTok">🎵</a>
-          <a href="#line" class="footer-social" title="LINE">📩</a>
-          <a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener" class="footer-social" title="Shop">🛒</a>
+        <div class="foot-socials">
+          <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="foot-social" title="TikTok">🎵</a>
+          <a href="#line" class="foot-social" title="LINE">📩</a>
+          <a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener" class="foot-social" title="Shop">🛒</a>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>サイトマップ</h4>
+      <div class="foot-col">
+        <h4>Pages</h4>
         <a href="#about">農園について</a>
         <a href="#story">農園ストーリー</a>
         <a href="#products">商品紹介</a>
@@ -1491,23 +1469,23 @@
         <a href="#faq">よくある質問</a>
         <a href="#contact">お問い合わせ</a>
       </div>
-      <div class="footer-col">
-        <h4>購入する</h4>
+      <div class="foot-col">
+        <h4>Shop</h4>
         <a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener">TikTok Shop</a>
         <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener">BASEショップ</a>
         <a href="#shop">直売所</a>
       </div>
-      <div class="footer-col">
-        <h4>SNS・公式</h4>
+      <div class="foot-col">
+        <h4>Social</h4>
         <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener">TikTok</a>
         <a href="#line">LINE公式</a>
         <a href="#company">会社概要</a>
         <a href="#contact">お問い合わせ</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">&copy; 2026 株式会社清流農園 All Rights Reserved.</div>
-      <div class="footer-bottom-links">
+    <div class="foot-bottom">
+      <div class="foot-copy">&copy; 2026 株式会社清流農園 All Rights Reserved.</div>
+      <div class="foot-links">
         <a href="#contact">プライバシーポリシー</a>
         <a href="#contact">特定商取引法に基づく表記</a>
       </div>
@@ -1516,7 +1494,7 @@
 </footer>
 
 <script>
-  /* Header shadow on scroll */
+  /* Header scroll shadow */
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 20);
@@ -1532,30 +1510,29 @@
     el.closest('.faq-item').classList.toggle('open');
   }
 
-  /* Contact submit */
+  /* Contact form */
   function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.btn-submit');
+    const btn = e.target.querySelector('.btn-send');
     btn.textContent = '送信完了 ✓';
-    btn.style.background = 'var(--green-dark)';
+    btn.style.background = 'var(--forest)';
     btn.disabled = true;
   }
 
-  /* TikTok grid mobile: hide 3rd card */
-  function checkTiktokGrid() {
-    const grid = document.getElementById('tiktokGrid');
-    if (!grid) return;
-    const cards = grid.children;
+  /* TikTok grid responsive */
+  function checkTT() {
+    const g = document.getElementById('ttGrid');
+    if (!g) return;
     if (window.innerWidth < 768) {
-      grid.style.gridTemplateColumns = 'repeat(2,1fr)';
-      if (cards[2]) cards[2].style.display = 'none';
+      g.style.gridTemplateColumns = 'repeat(2,1fr)';
+      g.children[2].style.display = 'none';
     } else {
-      grid.style.gridTemplateColumns = 'repeat(3,1fr)';
-      if (cards[2]) cards[2].style.display = '';
+      g.style.gridTemplateColumns = 'repeat(3,1fr)';
+      g.children[2].style.display = '';
     }
   }
-  window.addEventListener('resize', checkTiktokGrid);
-  checkTiktokGrid();
+  window.addEventListener('resize', checkTT, { passive: true });
+  checkTT();
 </script>
 
 </body>
