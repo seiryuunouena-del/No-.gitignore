@@ -773,6 +773,114 @@
     .footer-bottom-links a:hover { color: rgba(255,255,255,.9); }
 
     /* =========================================================
+       STORY（農園ストーリー）
+    ========================================================= */
+    .story { background: var(--gray-50); overflow: hidden; }
+    .story-steps { display: flex; flex-direction: column; gap: 0; margin-top: 56px; }
+    .story-step {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      min-height: 360px;
+    }
+    .story-step:nth-child(even) { direction: rtl; }
+    .story-step:nth-child(even) > * { direction: ltr; }
+    .story-visual {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 96px; padding: 48px;
+      position: relative; overflow: hidden;
+    }
+    .story-visual.sv1 {
+      background: linear-gradient(135deg, #1e4620, #3d8b40);
+    }
+    .story-visual.sv2 {
+      background: linear-gradient(135deg, #3b2800, #7a5200);
+    }
+    .story-visual.sv3 {
+      background: linear-gradient(135deg, #1a2e4a, #2d5080);
+    }
+    .story-visual-year {
+      position: absolute; top: 24px; left: 24px;
+      font-size: 11px; font-weight: 700; color: rgba(255,255,255,.5);
+      letter-spacing: .15em;
+    }
+    .story-text-block {
+      background: #fff; padding: 56px 56px 56px 64px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .story-step:nth-child(even) .story-text-block {
+      padding: 56px 64px 56px 56px;
+    }
+    .story-chapter {
+      font-size: 11px; font-weight: 700; color: var(--green-mid);
+      letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .story-step-title {
+      font-size: clamp(20px, 2.5vw, 28px); font-weight: 900;
+      line-height: 1.3; color: var(--gray-900); margin-bottom: 16px;
+    }
+    .story-step-body {
+      font-size: 14.5px; color: var(--gray-500); line-height: 2;
+    }
+    .story-quote {
+      margin-top: 24px; padding: 18px 20px;
+      background: var(--green-pale); border-left: 3px solid var(--green-mid);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 13px; color: var(--green-dark); font-weight: 600; line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* =========================================================
+       RECIPE（レシピ提案）
+    ========================================================= */
+    .recipe { background: var(--white); }
+    .recipe-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .recipe-card {
+      border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
+      transition: transform .25s, box-shadow .25s;
+      background: #fff;
+    }
+    .recipe-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .recipe-visual {
+      aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 72px; position: relative;
+    }
+    .recipe-visual.rv1 { background: linear-gradient(135deg, #fff3e8, #ffd9a0); }
+    .recipe-visual.rv2 { background: linear-gradient(135deg, #f0fdf4, #bbf7d0); }
+    .recipe-visual.rv3 { background: linear-gradient(135deg, #fefce8, #fde68a); }
+    .recipe-difficulty {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(0,0,0,.55); backdrop-filter: blur(4px);
+      color: #fff; font-size: 11px; font-weight: 700;
+      padding: 4px 10px; border-radius: 40px;
+    }
+    .recipe-body { padding: 24px; }
+    .recipe-time {
+      display: flex; align-items: center; gap: 4px;
+      font-size: 11px; color: var(--gray-500); font-weight: 600;
+      margin-bottom: 8px; letter-spacing: .04em;
+    }
+    .recipe-name { font-size: 17px; font-weight: 800; color: var(--gray-900); margin-bottom: 8px; }
+    .recipe-desc { font-size: 13px; color: var(--gray-500); line-height: 1.85; margin-bottom: 16px; }
+    .recipe-steps { display: flex; flex-direction: column; gap: 8px; }
+    .recipe-step-item {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 12.5px; color: var(--gray-700);
+    }
+    .recipe-step-num {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--green-mid); color: #fff;
+      font-size: 10px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .recipe-cta {
+      text-align: center; margin-top: 48px;
+    }
+    .recipe-cta-note { font-size: 13px; color: var(--gray-500); margin-top: 12px; }
+
+    /* =========================================================
        RESPONSIVE
     ========================================================= */
     @media (max-width: 1024px) {
@@ -787,6 +895,9 @@
       .hero-content { padding: 60px 20px; }
       .about-wrap, .shop-layout, .company-layout,
       .contact-inner, .news-layout { grid-template-columns: 1fr; gap: 40px; }
+      .story-step, .story-step:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
+      .story-text-block, .story-step:nth-child(even) .story-text-block { padding: 36px 28px; }
+      .recipe-grid { grid-template-columns: 1fr; }
       .about-visual { order: -1; }
       .about-img-sub { display: none; }
       .features-grid { grid-template-columns: 1fr; }
@@ -820,9 +931,10 @@
     </a>
     <nav>
       <a href="#about">農園について</a>
+      <a href="#story">ストーリー</a>
       <a href="#products">商品</a>
+      <a href="#recipe">レシピ</a>
       <a href="#shop">直売所</a>
-      <a href="#news">お知らせ</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
     <div class="header-cta">
@@ -838,9 +950,10 @@
 <!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
   <a href="#about" onclick="toggleMenu()">農園について</a>
+  <a href="#story" onclick="toggleMenu()">ストーリー</a>
   <a href="#products" onclick="toggleMenu()">商品</a>
+  <a href="#recipe" onclick="toggleMenu()">レシピ</a>
   <a href="#shop" onclick="toggleMenu()">直売所</a>
-  <a href="#news" onclick="toggleMenu()">お知らせ</a>
   <a href="#contact" onclick="toggleMenu()">お問い合わせ</a>
   <a href="#line" onclick="toggleMenu()" class="btn-header-line" style="padding:14px 32px;font-size:15px;">📩 LINE登録</a>
 </div>
@@ -968,6 +1081,80 @@
   </div>
 </section>
 
+<!-- ===================== STORY ===================== -->
+<section class="story" id="story">
+  <div class="inner">
+    <div class="tag-line">Our Story</div>
+    <h2 class="section-title">清流農園の歩み</h2>
+    <p class="section-lead">北海道の大地に根を張り、農業と向き合い続けてきた清流農園の物語。</p>
+  </div>
+  <div class="story-steps">
+    <!-- STEP 1 -->
+    <div class="story-step">
+      <div class="story-visual sv1">
+        🌱
+        <div class="story-visual-year">BEGINNING</div>
+      </div>
+      <div class="story-text-block">
+        <div class="story-chapter">Chapter 01</div>
+        <h3 class="story-step-title">北海道の大地と向き合う</h3>
+        <p class="story-step-body">
+          網走郡津別町——。オホーツク海に近いこの地は、昼夜の寒暖差が大きく、
+          清らかな水に恵まれた農業の宝庫です。先人たちが切り拓いたこの土地で、
+          私たちは玉ねぎ栽培を通じて農業の本質を学び続けています。
+          <br><br>
+          砂壌土のなめらかな土に種を蒔く瞬間、毎年新しい農業が始まります。
+        </p>
+        <div class="story-quote">
+          「この土地でしか育たない味がある。津別の玉ねぎを全国へ届けたい」
+        </div>
+      </div>
+    </div>
+    <!-- STEP 2 -->
+    <div class="story-step">
+      <div class="story-visual sv2">
+        🧅
+        <div class="story-visual-year">CULTIVATION</div>
+      </div>
+      <div class="story-text-block">
+        <div class="story-chapter">Chapter 02</div>
+        <h3 class="story-step-title">こだわりの一貫管理</h3>
+        <p class="story-step-body">
+          春の播種から秋の収穫まで、すべての工程を自社で管理しています。
+          選別・梱包・発送も例外ではありません。中間業者を介さないことで、
+          収穫したばかりの新鮮な玉ねぎをそのままお客様の手元へ届けられます。
+          <br><br>
+          品質へのこだわりは妥協しない——それが清流農園の原点です。
+        </p>
+        <div class="story-quote">
+          「手をかけた分だけ、野菜は応えてくれる。一つひとつに愛情を込める」
+        </div>
+      </div>
+    </div>
+    <!-- STEP 3 -->
+    <div class="story-step">
+      <div class="story-visual sv3">
+        📱
+        <div class="story-visual-year">FUTURE</div>
+      </div>
+      <div class="story-text-block">
+        <div class="story-chapter">Chapter 03</div>
+        <h3 class="story-step-title">TikTokで農業の未来をひらく</h3>
+        <p class="story-step-body">
+          「農家の日常を、もっとリアルに伝えたい」——そんな想いからTikTokでの
+          発信を始めました。収穫の喜び、作業の大変さ、北海道の美しい風景。
+          画面を通じて農業の魅力を届けることで、消費者との距離が縮まっていきました。
+          <br><br>
+          清流農園はこれからも、農業の"今"を発信し続けます。
+        </p>
+        <div class="story-quote">
+          「農家と食卓をつなぐ。TikTokはその架け橋になれると信じています」
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== PRODUCTS ===================== -->
 <section class="products" id="products">
   <div class="inner">
@@ -1027,6 +1214,105 @@
     <div class="products-more">
       <a href="https://vt.tiktok.com/ZSQaAXWnx/?page=TikTokShop" target="_blank" rel="noopener" class="btn-outline-green">🛒 TikTok Shopで購入する</a>
       <a href="https://seiryunouen.base.shop/" target="_blank" rel="noopener" class="btn-outline-green">📦 BASEショップへ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RECIPE ===================== -->
+<section class="recipe" id="recipe">
+  <div class="inner">
+    <div class="tag-line">Recipe</div>
+    <h2 class="section-title">清流農園の玉ねぎで作る<br>かんたんレシピ</h2>
+    <p class="section-lead">甘みと旨みが詰まった津別産玉ねぎの美味しさを、シンプルなレシピでご堪能ください。</p>
+    <div class="recipe-grid">
+
+      <!-- Recipe 1 -->
+      <div class="recipe-card">
+        <div class="recipe-visual rv1">
+          🍲
+          <span class="recipe-difficulty">★☆☆ かんたん</span>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-time">⏱ 調理時間：約10分</div>
+          <div class="recipe-name">まるごと玉ねぎスープ</div>
+          <div class="recipe-desc">玉ねぎの甘みがじんわり溶け出す、体が温まるシンプルスープ。北海道産の旨みを一番感じられる食べ方です。</div>
+          <div class="recipe-steps">
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">1</span>
+              玉ねぎを皮ごと十字に切り込みを入れる
+            </div>
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">2</span>
+              コンソメスープと一緒に鍋で15分煮込む
+            </div>
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">3</span>
+              塩・胡椒で味を整え、パセリを散らして完成
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipe 2 -->
+      <div class="recipe-card">
+        <div class="recipe-visual rv2">
+          🥗
+          <span class="recipe-difficulty">★☆☆ かんたん</span>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-time">⏱ 調理時間：約5分</div>
+          <div class="recipe-name">新玉ねぎのスライスサラダ</div>
+          <div class="recipe-desc">みずみずしい新玉ねぎをスライスして、ポン酢とかつお節で。辛みが少なく甘みの強い津別産だからこそ美味しい一品。</div>
+          <div class="recipe-steps">
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">1</span>
+              玉ねぎを薄切りにして水にさらす（5分）
+            </div>
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">2</span>
+              水気を切って器に盛る
+            </div>
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">3</span>
+              ポン酢・かつお節・ごま油をかけて完成
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipe 3 -->
+      <div class="recipe-card">
+        <div class="recipe-visual rv3">
+          🍳
+          <span class="recipe-difficulty">★★☆ ふつう</span>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-time">⏱ 調理時間：約20分</div>
+          <div class="recipe-name">飴色玉ねぎのパスタ</div>
+          <div class="recipe-desc">じっくり炒めて飴色にした玉ねぎは、まるでソースのように甘くとろける。その美味しさは津別の玉ねぎだからこそ。</div>
+          <div class="recipe-steps">
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">1</span>
+              玉ねぎを薄切りにし、バターで弱火15分炒める
+            </div>
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">2</span>
+              ゆでたパスタと和え、醤油・塩で味付け
+            </div>
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">3</span>
+              黒胡椒をたっぷり振ってできあがり
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="recipe-cta">
+      <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="btn-outline-green">
+        🎵 TikTokでレシピ動画を見る
+      </a>
+      <div class="recipe-cta-note">農園直送の玉ねぎで、ぜひお試しください</div>
     </div>
   </div>
 </section>
@@ -1361,7 +1647,9 @@
       <div class="footer-col">
         <h4>サイトマップ</h4>
         <a href="#about">農園について</a>
+        <a href="#story">農園ストーリー</a>
         <a href="#products">商品紹介</a>
+        <a href="#recipe">レシピ</a>
         <a href="#shop">直売所情報</a>
         <a href="#faq">よくある質問</a>
         <a href="#contact">お問い合わせ</a>
