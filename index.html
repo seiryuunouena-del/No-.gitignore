@@ -835,6 +835,16 @@
     .recipe-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
     }
+    /* 4枚目・5枚目は2列中央寄せ */
+    .recipe-grid .recipe-card:nth-child(4),
+    .recipe-grid .recipe-card:nth-child(5) {
+      grid-column: span 1;
+    }
+    .recipe-row2 {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+      max-width: calc((100% - 24px) * 2 / 3 + 24px);
+      margin: 24px auto 0;
+    }
     .recipe-card {
       border-radius: var(--radius-lg); overflow: hidden;
       box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
@@ -898,6 +908,7 @@
       .story-step, .story-step:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
       .story-text-block, .story-step:nth-child(even) .story-text-block { padding: 36px 28px; }
       .recipe-grid { grid-template-columns: 1fr; }
+      .recipe-row2 { grid-template-columns: 1fr; max-width: 100%; }
       .about-visual { order: -1; }
       .about-img-sub { display: none; }
       .features-grid { grid-template-columns: 1fr; }
@@ -1307,7 +1318,67 @@
         </div>
       </div>
 
-    </div>
+    </div><!-- /.recipe-grid -->
+
+    <!-- 2列目 -->
+    <div class="recipe-row2">
+
+      <!-- Recipe 4: オニオンブロッサム -->
+      <div class="recipe-card">
+        <div class="recipe-visual" style="background:linear-gradient(135deg,#fff0e8,#ffc8a0);">
+          🌸
+          <span class="recipe-difficulty">★★☆ ふつう</span>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-time">⏱ 調理時間：約30分</div>
+          <div class="recipe-name">オニオンブロッサム</div>
+          <div class="recipe-desc">花のように開いた揚げ玉ねぎ。外はサクサク、中はとろっと甘い。津別産の大玉がこのレシピに最適です。ディップソースと一緒にどうぞ。</div>
+          <div class="recipe-steps">
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">1</span>
+              玉ねぎの根元を残し、上から16等分に切り込みを入れて花形に開く
+            </div>
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">2</span>
+              小麦粉→溶き卵→パン粉の順にまぶし、180℃の油で4〜5分揚げる
+            </div>
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">3</span>
+              マヨネーズ＋ケチャップ＋スパイスのディップを添えて完成
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipe 5: オニオングラタン -->
+      <div class="recipe-card">
+        <div class="recipe-visual" style="background:linear-gradient(135deg,#fdf6e3,#f5dfa0);">
+          🧀
+          <span class="recipe-difficulty">★★☆ ふつう</span>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-time">⏱ 調理時間：約40分</div>
+          <div class="recipe-name">オニオングラタンスープ</div>
+          <div class="recipe-desc">フランスの定番をご家庭で。飴色に炒めた玉ねぎの深い甘みとチーズの香ばしさが絶品。津別産の甘い玉ねぎだからこそ本格的な味わいに。</div>
+          <div class="recipe-steps">
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">1</span>
+              薄切り玉ねぎをバターで弱火20分、きつね色になるまで炒める
+            </div>
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">2</span>
+              コンソメスープを注ぎ10分煮込み、耐熱容器に移してバゲットを乗せる
+            </div>
+            <div class="recipe-step-item">
+              <span class="recipe-step-num">3</span>
+              グリュイエールチーズをたっぷり乗せ、230℃のオーブンで5〜7分焼く
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.recipe-row2 -->
+
     <div class="recipe-cta">
       <a href="https://www.tiktok.com/@kitanokoropo" target="_blank" rel="noopener" class="btn-outline-green">
         🎵 TikTokでレシピ動画を見る
